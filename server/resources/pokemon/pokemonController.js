@@ -1,5 +1,4 @@
 var Pokemon = require('./Pokemon');
-var db = require('./pokemon/Pokemon.js');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json()
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -23,54 +22,48 @@ exports.createOne = function (req, res) {
 };
 
 exports.retrieve = function (req, res) {
-	createOne(req,res){
 		Pokemon.save(function (err, product) {
   		if (err) {
   			console.log(err)
   		}
   		res.json(product)
 		})
-	}
+	
 };
 
 exports.retrieveOne = function (req, res) {
-		Pokemon.findByName(object.name, function (err, data) {
-		retrieve(req,res){
+		Pokemon.findByName(object.number, function (err, data) {
   			if(err){
 				console.log(err);
 			}
 				res.json(data);
 
-		}
+		
 		});
-
-	}
 };
 
 exports.updateOne = function (req, res) {
-	createOne(req,res){
-		Pokemon.findOneAndUpdate(object.name, {$set:{name:"lol"}},function(err, data){
+		Pokemon.findOneAndUpdate(object.number, {$set:{number:50}},function(err, data){
     if(err){
         console.log("Something wrong when updating data!");
     }
 
     res.json(data);
 });
-	}
 };
 
 exports.delete = function (req, res) {
-	createOne(req,res){
+	
 	Pokemon.remove(object.number, function (err) {
 		console.log(err)
 	});
-	}
+	
 };
 
 exports.deleteOne = function (req, res) {
-	createOne(req,res){
-	Pokemon.deleteOne(object.name, function (err) {
+
+	Pokemon.deleteOne(object.number, function (err) {
 		console.log(err)
 	});
-	}
+	
 };
