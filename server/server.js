@@ -4,7 +4,7 @@ var morgan = require('morgan');
 var db = require('./db');
 
 // Create the Express application:
-var app;
+var app = express()
 
 
 // Attach middleware:
@@ -14,7 +14,26 @@ var app;
 
 
 app.get('/', function (req, res) {
+	res.send('hello world')
+});
+app.get('/api/pokemon', function (req, res){
 	
 });
+app.post('/api/pokemon', function (req, res){
+
+});
+app.delete('/api/pokemon', function (req, res){
+
+});
+app.get('/api/pokemon/:number', function (req, res){
+
+});
+app.put('/api/pokemon/:number', function (req, res){
+
+});
+app.delete('/api/pokemon/:number', function (req, res){
+
+});
+
 
 module.exports = app;
