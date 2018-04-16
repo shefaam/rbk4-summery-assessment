@@ -13,5 +13,15 @@ var pokemonSchema = mongoose.Schema({
 
 var Pokemon = mongoose.model('Pokemon',pokemonSchema);
 
+function save(data){
+	//console.log(data)
+	var pokemon = new Pokemon({number:data.number,name:data.name,types:data.types,imageUrl:data.imageUrl})
+	pokemon.save(function(err){
+			if (err) console.log('error')
+		})
 
-module.exports = Pokemon;
+}
+
+
+module.exports.Pokemon = Pokemon;
+module.exports.save = save;
