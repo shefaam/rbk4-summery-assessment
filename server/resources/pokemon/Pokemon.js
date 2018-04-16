@@ -8,13 +8,9 @@ var pokemonSchema = new mongoose.Schema({ //object that will take the contents o
 	imageURL: String
 });
 
-
-
-
-
 // Register the pokemonSchema with Mongoose as the 'Pokemon' collection.
 
-var Pokemon;
+var Pokemon = mongoose.model('Pokemon', pokemonSchema);
 
 
 module.exports = Pokemon;
