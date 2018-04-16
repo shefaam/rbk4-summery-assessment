@@ -117,11 +117,5 @@ render(){
 }
 
 
-
-
-
-
-
-
 ReactDOM.render(<App number={ 10 }/>, document.getElementById('app'));
 
