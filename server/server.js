@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 
 
 // Import the pokemonRouter and assign it to the correct route:
-
+db.find()
 
 app.get('/', function (req, res) {
 	res.send('POKEMONS')
