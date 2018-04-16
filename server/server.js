@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var db = require('./db');
-
+var router = require('./pokemon/pokemonRouter.js')
 
 // Create the Express application:
 var app = express();
@@ -16,7 +16,7 @@ var app = express();
 
 app.get('/', function (req, res) {
 	
-	res.send('hello')
+	res.send()
 	
 });
 

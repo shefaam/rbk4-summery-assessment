@@ -15,4 +15,6 @@ pokemonRouter.route('/:number').get(pokemonController.retrieveOne);
 pokemonRouter.route('/:number').put(pokemonController.updateOne);
 
 pokemonRouter.route('/:number').delete(pokemonController.deleteOne);
-module.exports = pokemonRouter;
+
+
+module.exports.pokemonRouter = pokemonRouter;
