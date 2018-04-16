@@ -4,9 +4,20 @@ var morgan = require('morgan');
 var db = require('./db');
 
 // Create the Express application:
-var app;
+// var app;
 
+app.post('/',function(req,res){
+var data=req.body;
+db.save(data,function(err,data){
+if(err){
+console.log(err)
+}
 
+res.send(data)
+
+})
+
+})
 // Attach middleware:
 
 
@@ -14,6 +25,16 @@ var app;
 
 
 app.get('/', function (req, res) {
+	
+db.Pokemon.find(function(err,data){
+if(err){
+
+	console.log(err)
+}
+
+res.send(data)
+})
+
 	
 });
 
