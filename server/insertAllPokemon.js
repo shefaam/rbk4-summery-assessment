@@ -6,7 +6,7 @@ var bodyParser = require('body-parser')
 // this file is run in the terminal with `node insertAllPokemon.js`, 
 // all 151 pokemon are inserted into the database
 var insertAllPokemon = function() {
-	app.use(bodyParser.json)
+	app.use(bodyParser.json()) //parsing all pokemons into body
 	
 };
 
