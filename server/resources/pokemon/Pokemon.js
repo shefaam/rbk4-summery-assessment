@@ -4,14 +4,14 @@ var mongoose = require('mongoose');
 var pokemonSchema = mongoose.Schema({
   number: Number,
   name: String,
-  types: [],
-  imageUr:String
+  types: [String],
+  imageUrl:String
 });
-
 
 // Register the pokemonSchema with Mongoose as the 'Pokemon' collection.
 
-var Pokemon;
+var Pokemon = mongoose.model('Pokemon', pokemonSchema)
+
 
 
 module.exports = Pokemon;
