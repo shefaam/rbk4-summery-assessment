@@ -2,11 +2,12 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var db = require('./db');
+var pokemonRouter = require('./resources/pokemon/pokemonRouter.js')
 
 // Create the Express application:
-var app;
+var app= express();
 
-
+app..use(express.static(__dirname + '../angular-client'))
 // Attach middleware:
 
 
@@ -14,6 +15,7 @@ var app;
 
 
 app.get('/', function (req, res) {
+	res.send('index.html')
 	
 });
 
