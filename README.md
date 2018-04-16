@@ -76,12 +76,12 @@ Using the existing code provided in `server/`, follow the steps below to build o
 | /api/pokemon/:number |   DELETE  |    empty     | Delete Pokémon with matching `number` and respond with JSON of deleted Pokémon |
 
 
-- [ ] Connect Mongoose to your local Mongo database in `db/index.js`
-- [ ] Create a Pokémon model in `resources/pokemon/Pokemon.js` and register it with Mongoose as the `Pokemon` collection with the following properties:
-  - [ ] `number`, a unique number
-  - [ ] `name`, a unique string
-  - [ ] `types`, an array of strings
-  - [ ] `imageUrl`, a string
+- [Y] Connect Mongoose to your local Mongo database in `db/index.js`
+- [Y] Create a Pokémon model in `resources/pokemon/Pokemon.js` and register it with Mongoose as the `Pokemon` collection with the following properties:
+  - [Y] `number`, a unique number
+  - [Y] `name`, a unique string
+  - [Y] `types`, an array of strings
+  - [Y] `imageUrl`, a string
 - [ ] In `insertAllPokemon.js`, write a function that can populate your Mongo database with the 151 original Pokémon found in `data/pokemon.json`, then run the script/invoke the function so that the database is populated.
 - [ ] Complete the controller in `resources/pokemon/pokemonController.js` that interacts with your Pokémon model.
 - [ ] Create a router in `resources/pokemon/pokemonRouter.js` that utilizes each of your controller's methods. Be sure to handle errors appropriately!
@@ -119,7 +119,7 @@ You may visit each of these resources directly, or search for them on Google wit
 * [Mongo docs](https://docs.mongodb.com/)
 * [Mongoose docs](http://mongoosejs.com/docs/index.html)
 * [React docs](https://facebook.github.io/react/docs/getting-started.html)
-* [Angular docs](https://docs.angularjs.org/api)
+* [Angular docs](https://docs.*-)
 * [Webpack docs](https://webpack.github.io/docs/)
 * Official documentation for any npm package that you install
 
