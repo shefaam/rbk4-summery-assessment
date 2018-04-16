@@ -21,15 +21,38 @@ var app = express();
 app.get('/api/pokemon', function (req, res) {
 
 
-	res.send('Hellooo')
+	res.send('/api/pokemon')
+});
+///////////////////////////////////////////////////////
+
+app.post('/api/pokemon', function (req, res) 
+{
+	db.save(req.body , function (err,date) 
+	{
+		if (err)
+		{
+			console.log (err);
+		}
+		console.log(data);
+		res.send(data);
+	});
+
+  // !! res.send('POST request to the homepage')
 });
 
+///////////////////////////////////////////////////////
 
-
-app.post('/api/pokemon', function (req, res) {
-
-
-  res.send('POST request to the homepage')
+app.post('/pokemon',function (req, res)
+ {
+	db.Pokemon.find({},function (err, pk) 
+	{
+		if(err)
+		{
+			console.log(err);
+		}
+		console.log(pk);
+		res.send(pk);
+	})
 });
 //
 module.exports = app;
