@@ -16,6 +16,16 @@
       <h1> Pokemom </h1>
       {{ starter }}
       {{ 3 + 5 }}
+      <div>
+        <input ng-model="insert.number">
+        <input ng-model="insert.name">
+        <input ng-model="insert.types">
+        <input ng-model="insert.imageUrl">
+        <button ng-click="submit()">submit</button>
+      </div>
+      <div ng-repeat="image in db">
+        <img src="image.imageUrl">
+      </div>
     </div>
   </body>
 </html>
