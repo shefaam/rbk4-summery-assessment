@@ -4,8 +4,8 @@ var mongoose = require('mongoose');
 // Complete the pokemonSchema below.
 
 var pokemonSchema =({
-	number:{type:Number},index:{unique:true},
-	name:{type:String},index:{unique:true},
+	number:{type:Number,index:{unique:true}},
+	name:{type:String,index:{unique:true}},
 	types : String,
 	imageUrl : String
 });
@@ -25,5 +25,5 @@ var save=function(data,callback){
 		}
 	})
 }
-module.exports = save;
-module.exports = Pokemon;
+module.exports.save = save;
+module.exports.Pokemon = Pokemon;
