@@ -15,8 +15,6 @@ var app = express();
 
 app.get('/', function (req, res) {
 
-	console.log('I am here')
-	app.send('ya halla')
 });
 
 module.exports = app;
