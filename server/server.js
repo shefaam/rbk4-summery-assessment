@@ -4,6 +4,16 @@ var morgan = require('morgan');
 var db = require('./db');
 var fs = require('fs');
 var path = require('path');
+
+/*
+var pokemonRouter = require('./resources/pokemon/pokemonRouter.js')();
+
+pokemonRouter.use('/pokemonRouters', pokemonRouter.routes());
+
+app.use(pokemonRouter.routes());
+*/
+
+
 //var use = require('use');
 //app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({ extended: true }));

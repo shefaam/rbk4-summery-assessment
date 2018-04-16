@@ -58,8 +58,12 @@ I am baaaaaack
 
 13- start for the router files
 
+14- Import pokemonRouter into server.js and assign it to the correct route
 
+wait I know the is i test lets see it
 
+Tthe time finish 
+thanks for this assesment again
 
 
 ******Note: I have error for connect the file with html must solve when reach it
