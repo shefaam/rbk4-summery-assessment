@@ -1,9 +1,10 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-var db = require('./db');
+var db = require('./db/index.js');
 var router = require('./resources/pokemon/pokemonRouter.js');
 var controller = require('./resources/pokemon/pokemonController.js');
+var pdb = require('./resources/pokemon/Pokemon.js');
 // Create the Express application:
 var app = express();
 var jsonParser = bodyParser.json() 
