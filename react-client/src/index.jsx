@@ -15,9 +15,14 @@ class Pokemon extends React.Component {
     imageUrl = ''
 
     };
+
+   this.display = this.display.bind(this);
+   this.update = this.update.bind(this);
   }
 
-  Display() {
+
+
+  display() {
 
   $.ajax({
   type:'GET',
@@ -35,44 +40,43 @@ class Pokemon extends React.Component {
   })
 }
 
-  update(input) {
+   update(input) {
 
-  $.ajax({
-  type:'POST',
-  url: url,
-  data = {
+  // $.ajax({
+  // type:'POST',
+  // url: url,
+  // data = {
 
-  number  = data.number;
-  this.state.name = data.name;
-  this.state.types = data.types.
-  this.state.imageUrl = data.image.Url; 
+  // number  = data.number;
+  // this.state.name = data.name;
+  // this.state.types = data.types.
+  // this.state.imageUrl = data.image.Url; 
 
-  }
-  success: function(data){
-  	this.state.number  = data.number;
-    this.state.name = data.name;
-    this.state.types = data.types.
-    this.state.imageUrl = data.image.Url; 
-  }
+  // }
+  // success: function(data){
+  // 	this.state.number  = data.number;
+  //   this.state.name = data.name;
+  //   this.state.types = data.types.
+  //   this.state.imageUrl = data.image.Url; 
+  // }
 
-  error: function(){
-   console.log("Error in GET");
-  }
+  // error: function(){
+  //  console.log("Error in GET");
+  // }
 
-  })
+  // })
 
   }
 
   render() {
     return (
       <div>
-        <h1>Hello, world!</h1>
-        <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+        <h1>Pokemon World!</h1>
+        <button onClick={this.display}>Display</button>
       </div>
     );
   }
 }
-
 
 
 
