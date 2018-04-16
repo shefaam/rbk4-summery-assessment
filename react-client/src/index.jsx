@@ -4,10 +4,6 @@ import Starter from './components/starter.jsx';
 import $ from 'jquery';
 
 
-
-
-
-
 class App extends React.Component {
 
 constructor(props){
@@ -17,39 +13,54 @@ constructor(props){
 		pokemons:[]
 	})
 
-sendGet();
+	this.sendGet=this.sendGet.bind(this);
+
+ 	this.sendGet();
+
 }
 
-
 sendGet(){
+	var that=this;
 	$.ajax({
-		url:'pokemon/api',
+		url:'/',
 		type:'GET',
 
 		success:function(data){
-
-			console.log(data);
-		}
+			this.setState({
+				pokemons:data
+			})
+			//console.log(data);
+		},
 
 		error:function(err){
 			console.log(err);
 		}
-
-
 	})
 
-
-
 }
+
+
 
 render(){
-	return (
-		<Starter num={ this.props.number }
+	return(
+		<Starter num={this.state.pokemons}/>
+		<div>
+		{this.state.pokemons.map((pokemon)=>{
+			<div>{pokemon.number,pokemon.name}
+			<img src={pokemon.imageUrl}/>
+
+		})
+
+
+	    }
+
+		</div>
 		)
-
 }
 
 }
+
+
 
 ReactDOM.render(<App number={ 10 }/>, document.getElementById('app'));
 

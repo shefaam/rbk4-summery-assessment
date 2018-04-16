@@ -52,12 +52,12 @@ exports.retrieveOne = function (req, res) {
 
 exports.updateOne = function (req, res) {
 
-	var number=req.body.number;
+	var num=req.params.number.substr(8);
 	var name=req.body.name;
 	var types=req.body.types;
 	var imageUrl=req.body.imageUrl;
 
-	Pokemon.update({number:req.params.number}, { number:number,name:name,types:types,imageUrl:imageUrl},function(err,pokemon){
+	Pokemon.update({number:num}, { number:num,name:name,types:types,imageUrl:imageUrl},function(err,pokemon){
 		if(err) console.log("error in updating");
 		else{
 			console.log("success in updating");
@@ -82,12 +82,12 @@ exports.delete = function (req, res) {
 
 exports.deleteOne = function (req, res) {
 
-	var number=req.body.number;
+	var num=req.params.number.substr(8);
 	var name=req.body.name;
 	var types=req.body.types;
 	var imageUrl=req.body.imageUrl;
 
-	Pokemon.remove({number:req.params.number}, function (err,pokemon) {
+	Pokemon.remove({number:num}, function (err,pokemon) {
 
 	if (err) console.log("error in deleting all");
   	else{

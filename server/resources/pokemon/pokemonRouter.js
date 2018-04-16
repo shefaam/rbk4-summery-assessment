@@ -10,12 +10,12 @@ pokemonRouter.route('/api/pokemon').get((req,res)=>{
 })
 
 
-pokemonRouter.route('/').post((req,res)=>{
+pokemonRouter.route('/api/pokemon').post((req,res)=>{
 
 	pokemonController.createOne(req,res);
 })
 
-pokemonRouter.route('/').delete((req,res)=>{
+pokemonRouter.route('/api/pokemon').delete((req,res)=>{
 
 	pokemonController.delete(req,res);
 })
@@ -24,18 +24,18 @@ pokemonRouter.route('/').delete((req,res)=>{
 
 
 pokemonRouter.route('/api/pokemon:number').get((req,res)=>{
-	
+
 	pokemonController.retrieveOne(req,res);
 })
 
 
-pokemonRouter.route('/:number').put((req,res)=>{
+pokemonRouter.route('/api/pokemon:number').put((req,res)=>{
 	pokemonController.updateOne(req,res);
 
 
 })
 
-pokemonRouter.route('/:number').delete((req,res)=>{
+pokemonRouter.route('/api/pokemon:number').delete((req,res)=>{
 	pokemonController.deleteOne(req,res);
 
 
