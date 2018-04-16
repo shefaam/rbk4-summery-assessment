@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app='pokemon'>
+<html >
   <head>
     <meta charset="utf-8" />
     <title>Pokemon</title>
@@ -7,15 +7,38 @@
   <body>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="app/services/starterFactory.js"></script>
     <script src="app/controllers/starterController.js"></script>
     <script src="app/app.js"></script>
 
-    <div ng-controller="StarterController">
-      <h1> Pokemom </h1>
-      {{ starter }}
-      {{ 3 + 5 }}
+    <div ng-app='pokemon' ng-controller=" myCtrl">
+      <div class="col-xs-12">
+      <h1>Pokemon</h1>
+      <p>Enter a Pokemon name </p>
+      </div>
+        
+      <div class="col-xs-4">
+      <input class="form-control " ng-model="name">
+      </div>
+      <button class="btn" ng-click='Done()'>Add</button>
+      <hr>
+      <div ng-repeat="pokee in pok">
+        
+      <div class="media" >
+        <div class="media-left">
+          <img ng-src="{{pokee.imageUrl}}" class="media-object" style="width:90px">
+        </div>
+     <div class="media-body">
+        <h4 class="media-heading">{{pokee.name}}</h4>
+      <p>{{pokee.number}}</p>
+     </div>
+      </div>
+      <hr>
+    </div>
+
     </div>
   </body>
 </html>
