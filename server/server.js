@@ -2,6 +2,7 @@ var express = require( 'express' );
 var bodyParser = require( 'body-parser' );
 var morgan = require( 'morgan' );
 var db = require( './db' );
+var path = require( 'path' )
 var pokemon = require( "./resources/pokemon/pokemon.js" )
 var limiter = require( './middleware/rateLimiter.js' )
 // Import the pokemonRouter and assign it to the correct route:
@@ -13,6 +14,7 @@ app.use( bodyParser.json() )
 app.use( bodyParser.urlencoded( { extended: false } ) )
 app.use( morgan( 'combined' ) )
 app.use( limiter )
+app.use( express.static( path.join( __dirname + "/react-client" ) ) )
 // ----------------------------------------------------------------
 
 
@@ -21,8 +23,9 @@ app.get('/', function ( req, res ) {
 		if( err ){
 			console.log( "err" )
 		}
-		res.send( data )
-	} )
+			res.send( data )
+			} )	
+	// console.log( 'hell' )
 });
 app.get('/created', function ( req, res ) {
 

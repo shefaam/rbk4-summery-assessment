@@ -22541,26 +22541,17 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var poke = function poke(props) {
+	var poke = function poke(_ref) {
+	  var num = _ref.num;
 	  return _react2.default.createElement(
 	    'div',
 	    null,
-	    props.pokemons.map(function (pokemon) {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          pokemon.name
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement('img', { src: pokemon.imageUrl })
-	        )
-	      );
-	    })
+	    _react2.default.createElement(
+	      'h1',
+	      null,
+	      'POKEMOM!??'
+	    ),
+	    num + 10
 	  );
 	};
 	

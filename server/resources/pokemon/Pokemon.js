@@ -22,3 +22,4 @@ var Pokemon = mongoose.model("Pokemon",pokemonSchema);
 // }
 
 module.exports = Pokemon;
+// exports.save = save
