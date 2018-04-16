@@ -7,11 +7,13 @@ class NewPokemon extends React.Component {
     		name: '',
     		number: '',
     		image: '',
-    		type: [],	
+    		types: [],	
     	};
     	this.handleChangeName = this.handleChangeName.bind(this);
     	this.handleChangeNumber = this.handleChangeNumber.bind(this);
   	 	this.handleSubmit = this.handleSubmit.bind(this);
+  	 	this.handleChangeTypes = this.handleChangeTypes.bind(this);
+  	 	this.handleChangeImage = this.handleChangeImage.bind(this);
  	}
 
  	handleChangeName(event) {
@@ -27,25 +29,19 @@ class NewPokemon extends React.Component {
 	}
 	handleChangeTypes(event) {
 		var arr = event.target.value.split(' ');
-	    this.setState({type: arr});
+	    this.setState({types: arr});
+	    console.log(this.state.types)
 	}
 
 	handleSubmit(event) {
 		var obj = {
 			name: this.state.name,
 			number: this.state.number,
-			image: this.state.image,
-			type: this.state.type
+			imageUrl: this.state.image,
+			types: this.state.types
 		}
-		$.ajax({
-		  url: '/pokemon',
-		  method: 'POST',
-		  data: obj
-		})
-		.done (function (data) {
-			console.log(data);
-		})
-	    // alert('Poke name: ' + this.state.name + ' its number: ' + this.state.number);
+		console.log('handleSubmit',obj)
+		this.props.addPokemon(obj)
 	    event.preventDefault();
 	 }
 

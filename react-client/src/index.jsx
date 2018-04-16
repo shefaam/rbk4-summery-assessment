@@ -10,10 +10,14 @@ class App extends React.Component {
 	constructor(props) {
     	super(props);
     	this.state = {
-    		pokemons: []
+    		pokemons: [],
+    		toDisplay:[]
     	}
-    	//this.pokemonsRetrive();
+    	this.pokemonsRetrive();
+    	this.filterPokemon = this.filterPokemon.bind(this)
+    	this.addPokemon = this.addPokemon.bind(this)
  	}
+
 
  	pokemonsRetrive() {
  		var that = this;
@@ -26,11 +30,50 @@ class App extends React.Component {
 			that.setState({
 				pokemons : data
 			})
+			that.filterPokemon(null);
 		})
+ 	}
+
+ 	addPokemon(obj){
+ 		var that = this;
+ 		console.log('AddPokemon Function',obj)
+ 		$.ajax({
+		  url: '/pokemon',
+		  method: 'POST',
+		  data: obj
+		})
+		.done (function (data) {
+			console.log('Data sent');
+			that.pokemonsRetrive()
+		})
+		.fail(function( jqXHR, textStatus ) {
+		  alert( "Request failed: " + textStatus );
+		});
  	}
 
  	filterPokemon(type) {
  		// need to replace all pokemons array with filtered one
+ 		if (type === null|| type === undefined){
+ 			this.setState({
+ 			 	toDisplay: this.state.pokemons
+ 			})
+ 		} else {
+ 			var filtered = [];
+ 			var pokemons = this.state.pokemons.slice();
+ 			pokemons.forEach(function (poke) {
+ 				console.log(hi) 			
+ 			})
+ 			// for(var i = 0; i < pokemons.length ; i++){
+ 			// 	// if ( pokemons[i].types.includes ) {
+ 			// 	// 	filtered.push(pokemons[i])
+ 			// 	// }
+ 			// }
+ 			console.log(filterd)
+ 			//alert(type)
+ 			this.setState({
+ 			 	toDisplay: filtered
+ 			})
+ 		}
  	}
 
  	render() {
@@ -38,15 +81,14 @@ class App extends React.Component {
  			return(
  				<div>
  					<h1> Pokemons array is empty </h1>
- 					<button onClick={ this.pokemonsRetrive() }> Show all pokemons</button>
  				</div>
  			)
  		}
  		return (
  			<div>
- 				<Search />
- 				<NewPokemon />
-	 			<PokemonsDisplay pokemons = {this.state.pokemons} />
+ 				<Search filterPokemon={this.filterPokemon} />
+ 				<NewPokemon addPokemon={this.addPokemon} />
+	 			<PokemonsDisplay pokemons = {this.state.toDisplay} />
 	 			<h1>test App</h1>
 	 			<button> Show </button>
 	 		</div>

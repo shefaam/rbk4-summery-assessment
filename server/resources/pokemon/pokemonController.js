@@ -11,12 +11,13 @@ var Pokemon = require('./Pokemon');
 exports.createOne = function (req, res) {
 	var number = req.body.number;
 	var name = req.body.name;
-	var type =req.body.type;
+	var types =req.body['types[]'];
+	console.log(req.body)
 	var imageUrl = req.body.imageUrl;
 	var pokeObj = {
 		number: number,
 		name: name,
-		types: type,
+		types: types,
 		imageUrl: imageUrl
 	};
 	var pokemon = new Pokemon(pokeObj);

@@ -10,11 +10,11 @@ class Search extends React.Component {
   	 	this.handleSubmit = this.handleSubmit.bind(this);
  	}
  	handleChange(event) {
-	    this.setState({value: event.target.value});
+	    this.setState({type: event.target.value});
 	}
 
 	handleSubmit(event) {
-	    alert('A name was submitted: ' + this.state.value);
+		this.props.filterPokemon(this.state.type)
 	    event.preventDefault();
 	 }
 
