@@ -83,9 +83,9 @@ Using the existing code provided in `server/`, follow the steps below to build o
   - [/] `types`, an array of strings
   - [/] `imageUrl`, a string
 - [/] In `insertAllPokemon.js`, write a function that can populate your Mongo database with the 151 original Pokémon found in `data/pokemon.json`, then run the script/invoke the function so that the database is populated.
-- [ ] Complete the controller in `resources/pokemon/pokemonController.js` that interacts with your Pokémon model.
-- [ ] Create a router in `resources/pokemon/pokemonRouter.js` that utilizes each of your controller's methods. Be sure to handle errors appropriately!
-- [ ] Import `pokemonRouter` into `server.js` and assign it to the correct route
+- [/] Complete the controller in `resources/pokemon/pokemonController.js` that interacts with your Pokémon model.
+- [/] Create a router in `resources/pokemon/pokemonRouter.js` that utilizes each of your controller's methods. Be sure to handle errors appropriately!
+- [ not sure how ] Import `pokemonRouter` into `server.js` and assign it to the correct route
 - [ ] Write at least two tests in `test/api-spec.js` that will help assure future developers that the API is working as intended.
 
 ### Front-end
