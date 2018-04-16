@@ -1,6 +1,7 @@
 1- after install npm ....
    install (npm install express --save) + (dev-ser somthing liek this)
    and there is some command to run react // it is two line in the learn 
+
 2- open the server by connect server.js with main html in react
 npm install webpack webpack-dev-server --save-dev
 npm start
@@ -17,28 +18,26 @@ again to start server after install npm (nodemon start)
 lets conntinue now (i go to do some music :) )
 
 5- now need to render all the data in root/data/pokemon.json lets do it
-in get you must use async thing that mean wait after get the data do somthing so we 
-use another function to do the console	
+  in get you must use async thing that mean wait after get the data do somthing so we 
+  use another function to do the console	
 
-i go to eat now :p 
+--i go to eat now :p 
 
-I come again :)
+--I come again :)
+
 6- now i get the data now i want to show it in the screen
-
-I search many cant know the problem I will use learn two command only ..
-  npm install -g webpack
-
-seperataed
-  npm run react-dev
-  npm run server-dev
+  I search many cant know the problem I will use learn two command only ..
+    npm install -g webpack
+  seperataed
+    npm run react-dev
+    npm run server-dev
 oh my god same problem
 
-
 7- oh my god i ask for help destk and tell me the start point not from the table it is from the square check
-so the time now 1:38 PM 
-Now I will start the assesment :(
-I spend all the time to make the table for get and delete work
-Please take this in calculated things :(
+  so the time now 1:38 PM 
+  Now I will start the assesment :(
+  I spend all the time to make the table for get and delete work
+  Please take this in calculated things :(
 
 8- start the assessment now and first connect the data base
 
@@ -46,29 +45,28 @@ Please take this in calculated things :(
 
 10- insertAllPokemon.js
 
-
 I go to pray I come now :)
+
 11- lets continue with data pase and render it 
 
 12- finish the controll as i Know and undstanding in mongoo
-nut i cant test it becuase i dont finish the conicteng this yet
+but i cant test it becuase i dont finish the conicteng this yet
+
+I go to break some time then i will back
+
+I am baaaaaack
+
+13- start for the router files
 
 
 
 
 
-
-
-
-
-
-
-
-******Note: I have error for connect the file with html
+******Note: I have error for connect the file with html must solve when reach it
 
 NOTE : Really thanks for all supporting and this assessment it is to enjoy
 I dont feel about the time 
-but I ish to undestand the steps before 1:38 PM :( but any way I am so enjoy to 
+but I wish to understand the steps before 1:38 PM :( but any way I am so enjoy to 
 see how I will be good when use only the offical documntion
 
 

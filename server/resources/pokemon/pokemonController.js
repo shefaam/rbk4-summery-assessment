@@ -46,7 +46,7 @@ exports.retrieve = function (req, res) {
 //retrieve one pokemon
 exports.retrieveOne = function (req, res) {
   //make the name of the pokemon need to retrive it in the request inside var 
-  var nameOfPokemon=req.dody.name
+  var numberOfPokemon=req.dody.number
   /*
   //find in the model all thing and .. the name of data pokemons
   db.Pokemon.find({}, function(err, pokemons) {
@@ -65,12 +65,12 @@ exports.retrieveOne = function (req, res) {
   });
   */
   //or I think this only
-  if (db.Pokemon.find({name:{$eq:nameOfPokemon}})) {
+  if (db.Pokemon.find({number:{$eq:numberOfPokemon}})) {
     //if find it retrive it to the user
-    res.send(db.Pokemon.find({name:{$eq:nameOfPokemon}}))
+    res.send(db.Pokemon.find({number:{$eq:numberOfPokemon}}))
   }else{
     //when fail in create
-    res.send("fail to retrieve this pokemon: " + nameOfPokemon)
+    res.send("fail to retrieve this pokemon: " + numberOfPokemon)
   }
 };
 
@@ -78,11 +78,11 @@ exports.retrieveOne = function (req, res) {
 exports.updateOne = function (req, res) {
   //make the data in request inside var
   var dataReq=req.body
-  var nameOfPokemon=req.dody.name
+  var numberOfPokemon=req.dody.number
   res.send()
   //then insert this obj inside the data base
   //but with condition if found this pokemon
-  if(db.Pokemon.find({name:{$eq:nameOfPokemon}})){
+  if(db.Pokemon.find({number:{$eq:numberOfPokemon}})){
     //but with condition if this data fill change it if not dont change it to any things
     if(dataReq.number){
       db.Pokemon.updateOne({
@@ -105,11 +105,11 @@ exports.updateOne = function (req, res) {
       })
     }
     //after finish update one response to the user sucess
-    res.send("success update this pokemon: " + dataReq.name)
+    res.send("success update this pokemon: " + dataReq.number)
   //if not found this pokemon  
   }else{ 
     //this pokemon not found
-    res.send("fail update cant found this pokemon: " + dataReq.name)
+    res.send("fail update cant found this pokemon: " + dataReq.number)
   } 
 };
 
@@ -128,14 +128,14 @@ exports.delete = function (req, res) {
 //delete one pokemon
 exports.deleteOne = function (req, res) {
   //make the name of the pokemon need to delete it in the request inside var 
-  var nameOfPokemon=req.dody.name
-  if (db.Pokemon.find({ name: { $eq: nameOfPokemon } })) {
+  var numberOfPokemon=req.dody.number
+  if (db.Pokemon.find({ number: { $eq: numberOfPokemon } })) {
     //delete specifict pokimen by condition
-    db.Pokemon.remove({ name: { $eq: nameOfPokemon } }) ;
+    db.Pokemon.remove({ number: { $eq: numberOfPokemon } }) ;
     //after delete response to sucess the delete this pokemons to the user
-    res.send("success delete this pokemon: " + nameOfPokemon); 
+    res.send("success delete this pokemon: " + numberOfPokemon); 
   }else{
     //this pokemon not found
-    res.send("fail to delete because cant found this pokemon: " + nameOfPokemon); 
+    res.send("fail to delete because cant found this pokemon: " + numberOfPokemon); 
   }
 };
