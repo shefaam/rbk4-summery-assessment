@@ -5,6 +5,11 @@ import $ from 'jquery';
 
 
 const App = (props) => <Starter num={ props.number } />;
+$.ajax({
+	type:"POST",
+	
+})
+
 
 ReactDOM.render(<App number={ 10 }/>, document.getElementById('app'));
 
