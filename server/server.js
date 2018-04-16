@@ -14,9 +14,10 @@ var app= express();
 //now we must conenct the server with out html ????? i think we dont need
 //when ask for home page
 app.get('/', function (req, res) {
-  console.log("HERE TEST:");
+  console.log("HERE TEST:" + "yeh");
      res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
+
 //now GET for /api/pokemon  /////////////////////////////////////////////////////////////////////////////
 //now GET for /api/pokemon  /////////////////////////////////////////////////////////////////////////////
 //Respond with JSON of all Pokémon

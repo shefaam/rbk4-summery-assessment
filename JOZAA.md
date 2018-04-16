@@ -47,18 +47,33 @@ Please take this in calculated things :(
 10- insertAllPokemon.js
 
 
+I go to pray I come now :)
+11- lets continue with data pase and render it 
+
+12- finish the controll as i Know and undstanding in mongoo
+nut i cant test it becuase i dont finish the conicteng this yet
+
+
+
+
+
+
+
+
+
+
+
+
 ******Note: I have error for connect the file with html
 
-
-
+NOTE : Really thanks for all supporting and this assessment it is to enjoy
+I dont feel about the time 
+but I ish to undestand the steps before 1:38 PM :( but any way I am so enjoy to 
+see how I will be good when use only the offical documntion
 
 
 note:
 https://stackoverflow.com/jobs/168006/front-end-designer-developer-verify?so=i&pg=1&offset=19
-
-
-
-
 
 * [MDN](https://developer.mozilla.org/en-US/)
 * [Express docs](https://expressjs.com/)
