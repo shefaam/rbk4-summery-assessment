@@ -27,12 +27,15 @@ Pokemon.findOne(function (err, person) {
 };
 
 exports.updateOne = function (req, res) {
+	req.body.number=req;
 
 };
 
 exports.delete = function (req, res) {
+	var a=[]
+	a.push(req.body)
 Pokemon.find().remove()
-res.render("success")
+res.render(a);
 
 };
 
