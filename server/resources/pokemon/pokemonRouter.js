@@ -5,6 +5,15 @@ var pokemonController = require('./pokemonController');
 pokemonRouter.route('/')
 
 pokemonRouter.route('/:number')
+
+pokemonController.createOne
+pokemonController.retrieve
+pokemonController.retrieveOne
+pokemonController.updateOne
+pokemonController.delete
+pokemonController.delteOne
+
  
+
 
 module.exports = pokemonRouter;

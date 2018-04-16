@@ -1,8 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
-var db = require('./db/index.js');
-
+var db = require('./db/index');
+var pokemonRouter = require('./resources/pokemon/pokemonRouter')
 // Create the Express application:
 var app = express();
 
@@ -13,29 +13,11 @@ var app = express();
 // Import the pokemonRouter and assign it to the correct route:
 
 
-app.get('/api/pokemon', function (req, res) {
-	res.send("Respond with JSON of all Pokémon")
+app.get('/', function (req, res) {
+	res.send("no thing")
 });
 
-app.post('/api/pokemon', function (req, res) {
-	
-});
 
-app.delete('/api/pokemon', function (req, res) {
-	
-});
-
-app.get('/api/pokemon', function (req, res) {
-	
-});
-
-app.get('/api/pokemon', function (req, res) {
-	
-});
-
-app.get('/api/pokemon', function (req, res) {
-	
-});
 
 
 
