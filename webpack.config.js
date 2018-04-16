@@ -21,7 +21,7 @@ var APP_DIR = path.resolve(__dirname, 'react-client/src');
 // While developing your app in react, you'll want to have two terminal tabs open - 
 // one that is running `npm run dev-react` and one that is running `npm start`
 var config = {
-  entry: APP_DIR + '/index.jsx',
+  entry:{app: [APP_DIR + '/index.jsx',APP_DIR + '/components/PokemonList.jsx',APP_DIR + '/components/PokemonList.jsx']} ,
   module: {
     loaders: [
       {
