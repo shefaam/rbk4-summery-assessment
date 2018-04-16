@@ -15,7 +15,7 @@ exports.createOne = function (req, res) {
 };
 
 exports.retrieve = function (req, res) {
-	Pokemon.find({}, 'name', function(err, results){
+	Pokemon.find({}, 'name imageUrl', function(err, results){
 		res.send(results)
 	})
 	//res.send('retrieve')
