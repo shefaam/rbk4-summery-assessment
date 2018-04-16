@@ -4,16 +4,28 @@ var morgan = require('morgan');
 var db = require('./db');
 
 // Create the Express application:
-var app;
+var app=express();
+
 
 
 // Attach middleware:
-
-
+app.use(function(req,res){
+	console.log("hey")
+})
 // Import the pokemonRouter and assign it to the correct route:
+// var pokemonRouter=require('./pokemonRouter')
+
+
+ // $.ajax({
+ //  type: "POST",
+ //  url: '',
+ //  data: data,
+ //  });
+
 
 
 app.get('/', function (req, res) {
+	res.send("pokemon world")
 	
 });
 
