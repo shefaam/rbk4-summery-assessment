@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Starter from './components/starter.jsx';
+import PokemonList from './components/PokemonList.jsx';
+import PokemonItem from './components/PokemonItem.jsx';
 import $ from 'jquery';
 
 
@@ -9,10 +10,10 @@ class App extends React.Component{
 		super(props)
 
 		this.state={
-			data:''
+			data:[]
 		}
 
-
+		this.getData=this.getData.bind(this)
 	}
 
 	getData(){
@@ -21,7 +22,7 @@ class App extends React.Component{
 			type:'GET',
 			url:'/api/pokemons',
 			success:function(data){
-				console.log(data)
+				console.log(that.state.data)
 				that.setState({data:data})
 			}
 		})
@@ -29,8 +30,8 @@ class App extends React.Component{
 	render(){
 		return(
 			<div>
-			<div>{this.state.data}</div>
-			<button onClick={this.getData.bind(this)}>Click</button>
+			<PokemonList pokemons={this.state.data}/>
+			<button onClick={this.getData}>Click</button>
 		 
 			</div>
 

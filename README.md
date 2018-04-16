@@ -82,7 +82,7 @@ Using the existing code provided in `server/`, follow the steps below to build o
   - [1] `name`, a unique string
   - [1] `types`, an array of strings
   - [1] `imageUrl`, a string
-- [ ] In `insertAllPokemon.js`, write a function that can populate your Mongo database with the 151 original Pokémon found in `data/pokemon.json`, then run the script/invoke the function so that the database is populated.
+- [2] In `insertAllPokemon.js`, write a function that can populate your Mongo database with the 151 original Pokémon found in `data/pokemon.json`, then run the script/invoke the function so that the database is populated.
 - [1] Complete the controller in `resources/pokemon/pokemonController.js` that interacts with your Pokémon model.
 - [1] Create a router in `resources/pokemon/pokemonRouter.js` that utilizes each of your controller's methods. Be sure to handle errors appropriately!
 - [1] Import `pokemonRouter` into `server.js` and assign it to the correct route
@@ -95,8 +95,8 @@ Using the existing code provided in `server/`, follow the steps below to build o
 Inside of `client/`, implement a single page front end to interact with this API using either Angular or React. There is a webpack config file already set up if you are choosing react - please read the `webpack.config.js` carefully before starting.
 
 Your front end should be served from Express and should allow the user to:
-- [ ] Display all Pokémon (with their images)
-- [ ] Add a new Pokémon
+- [1] Display all Pokémon (with their images)
+- [] Add a new Pokémon
 - [ ] Filter Pokémon based on their type (but NOT on other properties)
 
 ### Middleware

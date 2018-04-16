@@ -1,5 +1,6 @@
-
 var mongoose = require('mongoose');
+var mongoUri = 'mongodb://localhost/pokemon';
+mongoose.connect(mongoUri);
 
 var Pokemon=require('./resources/pokemon/Pokemon.js')
 var fs=require('fs')
@@ -18,19 +19,18 @@ var insertAllPokemon = function() {
 	for (var i = 0; i < pokemonArr.length; i++) {
 		var pokemon=new Pokemon({
 			number:pokemonArr[i].number,
-	 		name:pokemonArr[i].number,
+	 		name:pokemonArr[i].name,
 	 		types: pokemonArr[i].types,
 	 		imageUrl:pokemonArr[i].imageUrl
 		})
-
-		Pokemon.save(pokemon)
-		// pokemon.save(function(err,pokemon){
-		// 	if(err){
-		// 		console.log(err)
-		// 	}else{
-		// 		console.log(pokemon)
-		// 	}
-		// })
+		console.log(pokemon)
+		pokemon.save(function(err,pokemon){
+			if(err){
+				console.log(err)
+			}else{
+				console.log("pokemon")
+			}
+		})
 	}
 		}
 	})
