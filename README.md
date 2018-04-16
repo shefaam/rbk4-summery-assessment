@@ -50,6 +50,11 @@ We recommend [SimpleScreenRecorder](http://www.maartenbaert.be/simplescreenrecor
 * `npm install`
 * `npm start`
 * FILL ME IN WITH ADDTIONAL STEPS AS PART OF SUBMISSION PROCESS
+   npm install -g nodemon
+   npm install express --save
+   open Mongidb database server
+   nodemon server.js
+   
 
 ## Requirements
 

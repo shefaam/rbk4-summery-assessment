@@ -2,7 +2,7 @@ var Pokemon = require('./Pokemon');
 
 // Complete each of the following controller methods
 exports.createOne = function (req, res) {
-
+res.create()
 };
 
 exports.retrieve = function (req, res) {
