@@ -76,16 +76,16 @@ Using the existing code provided in `server/`, follow the steps below to build o
 | /api/pokemon/:number |   DELETE  |    empty     | Delete Pokémon with matching `number` and respond with JSON of deleted Pokémon |
 
 
-- [ ] Connect Mongoose to your local Mongo database in `db/index.js`
-- [ ] Create a Pokémon model in `resources/pokemon/Pokemon.js` and register it with Mongoose as the `Pokemon` collection with the following properties:
-  - [ ] `number`, a unique number
-  - [ ] `name`, a unique string
-  - [ ] `types`, an array of strings
-  - [ ] `imageUrl`, a string
-- [ ] In `insertAllPokemon.js`, write a function that can populate your Mongo database with the 151 original Pokémon found in `data/pokemon.json`, then run the script/invoke the function so that the database is populated.
-- [ ] Complete the controller in `resources/pokemon/pokemonController.js` that interacts with your Pokémon model.
-- [ ] Create a router in `resources/pokemon/pokemonRouter.js` that utilizes each of your controller's methods. Be sure to handle errors appropriately!
-- [ ] Import `pokemonRouter` into `server.js` and assign it to the correct route
+- [ *] Connect Mongoose to your local Mongo database in `db/index.js`
+- [ *] Create a Pokémon model in `resources/pokemon/Pokemon.js` and register it with Mongoose as the `Pokemon` collection with the following properties:
+  - [* ] `number`, a unique number
+  - [ *] `name`, a unique string
+  - [* ] `types`, an array of strings
+  - [ *] `imageUrl`, a string
+- [ *] In `insertAllPokemon.js`, write a function that can populate your Mongo database with the 151 original Pokémon found in `data/pokemon.json`, then run the script/invoke the function so that the database is populated.
+- [ *] Complete the controller in `resources/pokemon/pokemonController.js` that interacts with your Pokémon model.
+- [* ] Create a router in `resources/pokemon/pokemonRouter.js` that utilizes each of your controller's methods. Be sure to handle errors appropriately!
+- [ *] Import `pokemonRouter` into `server.js` and assign it to the correct route
 - [ ] Write at least two tests in `test/api-spec.js` that will help assure future developers that the API is working as intended.
 
 ### Front-end
