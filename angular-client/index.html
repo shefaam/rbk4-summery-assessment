@@ -14,7 +14,7 @@
     <script src="app/controllers/starterController.js"></script>
     <script src="app/app.js"></script>
 
-    <div ng-app='pokemon' ng-controller="StarterController">
+    <div ng-app='pokemon' ng-controller=" myCtrl">
       <div class="col-xs-12">
       <h1>Pokemon</h1>
       <p>Enter a Pokemon name </p>
@@ -25,6 +25,9 @@
       </div>
       <button class="btn">Add</button>
       <hr>
+      <div >
+        <p>{{pok}}</p>
+      </div>
     </div>
   </body>
 </html>

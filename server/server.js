@@ -15,8 +15,8 @@ app.use(express.static(path.join(__dirname, '../angular-client')));
 
 // Import the pokemonRouter and assign it to the correct route:
 
-app.get('/', function (req, res) {
-	console.log(route.pokemonRouter)
+app.get('/name', function (req, res) {
+	
 });
 	
 module.exports = app;
