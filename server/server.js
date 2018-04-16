@@ -20,4 +20,21 @@ app.get('/', function (req, res) {
 	res.send()
 });
 
+app.get('/api/pokemon/:number', function (req, res) {
+	//it takes retrieveOne() as a callback function
+});
+
+app.put('/api/pokemon/:number', function(req,res) {
+  //it takes updateOne() as a callback function
+});
+
+app.delete('/api/pokemon',function (req, res) {
+  //it takes delete() as a callback function
+});
+
+app.delete('/api/pokemon/:number',function (req, res) {
+  //it takes deleteOne() as a callback function
+});
+
+
 module.exports = app;
