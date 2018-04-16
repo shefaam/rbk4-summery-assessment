@@ -6,7 +6,7 @@ mongoose.connect(mongoUri);
 var db = mongoose.connection;
 
 db.on('error',console.error.bind(console,'connection error'))
-db.on('open',function(){
+db.once('open',function(){
 	console.log('connected to the database!')
 })
 
