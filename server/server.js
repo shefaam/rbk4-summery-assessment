@@ -4,6 +4,7 @@ var morgan = require('morgan');
 var db = require('./db');
 var Pokemon = require('./resources/pokemon/Pokemon')
 var ctrl = require('./resources/pokemon/pokemonController')
+var router = require('./resources/pokemon/pokemonRouter')
 // Create the Express application:
 var app = express()
 

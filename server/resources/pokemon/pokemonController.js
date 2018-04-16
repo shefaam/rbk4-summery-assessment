@@ -25,7 +25,7 @@ exports.createOne = function (req, res) {
 exports.retrieve = function (req, res) {
   Pokemon.find({}, function(err, data){
 		if (err){
-			res.statusCode(500)
+			res.sendStatus(500)
 		}
 		else {
 			res.json(data)
