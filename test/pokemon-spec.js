@@ -4,4 +4,5 @@ var Pokemon = require('../server/resources/pokemon/Pokemon');
 
 describe('Pokemon Model', function () {
   // Write tests here!
+  
 });
