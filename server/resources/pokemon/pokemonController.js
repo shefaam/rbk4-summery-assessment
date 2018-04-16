@@ -1,18 +1,11 @@
 var Pokemon = require('./Pokemon');
 
 // Complete each of the following controller methods
-// assuming i will have to send these fron my front-end page
-
-
-////////////////////////////////////////////////////////////////////////
-/* I need to check If findOne(dosomthing) callback recived err or not */
-////////////////////////////////////////////////////////////////////////
 
 exports.createOne = function (req, res) {
 	var number = req.body.number;
 	var name = req.body.name;
 	var types =req.body['types[]'];
-	console.log(req.body)
 	var imageUrl = req.body.imageUrl;
 	var pokeObj = {
 		number: number,
@@ -32,7 +25,6 @@ exports.retrieve = function (req, res) {
 };
 
 exports.retrieveOne = function (req, res) {
-	// retrieve one by its number
 	var number = req.params.number;
 	Pokemon.findOne({number:number}).exec(function (err, found) {
 		res.json(found);
@@ -40,7 +32,6 @@ exports.retrieveOne = function (req, res) {
 };
 
 exports.updateOne = function (req, res) {
-	// update by number of pokemon and then send all the poke object again 
 	var number = req.params.number;
 	var name = req.body.name;
 	var type =req.body.type;
@@ -69,7 +60,6 @@ exports.delete = function (req, res) {
 };
 
 exports.deleteOne = function (req, res) {
-	// delete by number
 	var number = req.params.number;
 	Pokemon.findOneAndRemove({number:number}, function(err, deleted) {
 		if (err) {
@@ -78,4 +68,3 @@ exports.deleteOne = function (req, res) {
 		res.send(deleted);
 	})
 };
-//Connection.prototype.dropCollection()

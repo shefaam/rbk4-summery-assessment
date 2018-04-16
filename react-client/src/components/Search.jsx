@@ -14,7 +14,7 @@ class Search extends React.Component {
 	}
 
 	handleSubmit(event) {
-		this.props.filterPokemon(this.state.type)
+		this.props.filterPokemon(this.state.type);
 	    event.preventDefault();
 	 }
 
@@ -23,10 +23,10 @@ class Search extends React.Component {
  			<div>
  				<form onSubmit={this.handleSubmit}>
 			        <label>
-			          Type:
+			          Search for pokemon type :
 			          <input type="text" onChange={this.handleChange} />
 			        </label>
-			        <input type="submit" value="Submit" />
+			        <input type="submit" value="Search" />
 			     </form>
 			</div>		
  		)

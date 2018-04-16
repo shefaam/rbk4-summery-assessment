@@ -20,4 +20,3 @@ class PokemonsDisplay extends React.Component {
 } 
 
 export default PokemonsDisplay;
-// get array of pokemon here , render them inside another component after loop overthem

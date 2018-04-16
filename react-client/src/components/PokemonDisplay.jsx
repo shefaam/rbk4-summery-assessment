@@ -9,9 +9,9 @@ class PokemonDisplay extends React.Component {
  		var name = pokemon.name;
  		var number = pokemon.number;
  		var image = pokemon.imageUrl;
- 		var types = []
+ 		var types = [];
  		pokemon.types.forEach(function(type,index) {
- 			types.push(<li key = {index}>{type}</li>)
+ 			types.push(<li key ={index} > {type} </li>)
  		})
  		return (
  			<div className="border">
@@ -19,7 +19,7 @@ class PokemonDisplay extends React.Component {
  				<h5> Pokemon number : {number} </h5>
  				<h5> Pokemon Type : </h5>
  				<ul>{types}</ul>
- 				<img src={image}  />
+ 				<img src={image} />
 			</div>		
  		)
  	}

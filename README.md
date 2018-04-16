@@ -97,7 +97,7 @@ Inside of `client/`, implement a single page front end to interact with this API
 Your front end should be served from Express and should allow the user to:
 - [X] Display all Pokémon (with their images)
 - [X] Add a new Pokémon
-- [ ] Filter Pokémon based on their type (but NOT on other properties)
+- [x] Filter Pokémon based on their type (but NOT on other properties)
 
 ### Middleware
 

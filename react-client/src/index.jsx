@@ -13,8 +13,8 @@ class App extends React.Component {
     		pokemons: []
     	}
     	this.pokemonsRetrive();
-    	this.filterPokemon = this.filterPokemon.bind(this)
-    	this.addPokemon = this.addPokemon.bind(this)
+    	this.filterPokemon = this.filterPokemon.bind(this);
+    	this.addPokemon = this.addPokemon.bind(this);
  	}
 
 
@@ -49,11 +49,11 @@ class App extends React.Component {
  	}
 
  	filterPokemon(type) {
- 		let test = this.state.pokemons
+ 		let PokArr = this.state.pokemons
  		let filtered = [];
- 		for(var i = 0 ; i < test.length ; i++) {
- 			if (test[i].types.includes(type)) {
- 				filtered.push(test[i])
+ 		for(var i = 0 ; i < PokArr.length ; i++) {
+ 			if (PokArr[i].types.includes(type)) {
+ 				filtered.push(PokArr[i])
  			}
  		}
  		this.setState({
@@ -67,14 +67,17 @@ class App extends React.Component {
  			return(
  				<div>
  					<h1> Pokemons array is empty </h1>
+ 					<button onClick={this.pokemonsRetrive.bind(this)}> Show all Pokemons </button>
  				</div>
  			)
  		}
  		return (
  			<div>
+ 				<button onClick={this.pokemonsRetrive.bind(this)}> Show all Pokemons </button>
  				<Search filterPokemon={this.filterPokemon} />
  				<NewPokemon addPokemon={this.addPokemon} />
 	 			<PokemonsDisplay pokemons = {this.state.pokemons} />
+
 	 		</div>
  		)
  	}

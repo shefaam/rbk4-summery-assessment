@@ -30,7 +30,6 @@ class NewPokemon extends React.Component {
 	handleChangeTypes(event) {
 		var arr = event.target.value.split(' ');
 	    this.setState({types: arr});
-	    console.log(this.state.types)
 	}
 
 	handleSubmit(event) {
@@ -40,8 +39,7 @@ class NewPokemon extends React.Component {
 			imageUrl: this.state.image,
 			types: this.state.types
 		}
-		console.log('handleSubmit',obj)
-		this.props.addPokemon(obj)
+		this.props.addPokemon(obj);
 	    event.preventDefault();
 	 }
 
