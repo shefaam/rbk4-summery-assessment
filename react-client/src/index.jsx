@@ -12,6 +12,7 @@ class App extends React.Component {
     };
 
   }
+  // here the ajax request bring the data from the api
 
   componentDidMount() {
     var x = this
@@ -28,6 +29,7 @@ class App extends React.Component {
   }
 
   render() {
+    //here i want to do the map to pass every item to starter
     this.componentDidMount()
     this.state.items.map((item)=>{
       return <Starter item={item} />
