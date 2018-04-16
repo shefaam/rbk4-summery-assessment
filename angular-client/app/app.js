@@ -7,7 +7,8 @@ app.controller('myCtrl', function($scope, $http) {
         url : "/name"
     }).then(function mySuccess(response) {
         $scope.pok = response.data;
+    	
     }, function myError(response) {
-        $scope.myWelcome = response.statusText;
+        $scope.pok = response.statusText;
     });
 });

@@ -2,10 +2,8 @@ var pokemonRouter = require('express').Router();
 var pokemonController = require('./pokemonController');
 
 // Create route handlers for each of the six methods in pokemonController
-var poke = pokemonRouter.route('/')
-poke.get(function (req , res) {
-	res.send(pokemonController.retrieve)
-})
+var poke = pokemonRouter.route('/name')
+poke.get(pokemonController.createOne)
 poke.post(function (req , res) {
 	res.send(pokemonController.createOne)
 })
