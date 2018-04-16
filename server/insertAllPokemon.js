@@ -1,9 +1,18 @@
-
+var pokemon = require('../pokemon/pokemon.json')
 
 // Fill in the definition of insertAllPokemon so that when 
 // this file is run in the terminal with `node insertAllPokemon.js`, 
 // all 151 pokemon are inserted into the database
 var insertAllPokemon = function() {
+	pokemon.
+  find().
+  populate({
+    path: 'data/pokemon.json',
+    // Explicitly exclude `_id`, see http://bit.ly/2aEfTdB
+    select: 'name -_id',
+    options: { limit: 151 }
+  }).
+  exec();
 };
 
 // NOTE: DO NOT invoke this function as part of your

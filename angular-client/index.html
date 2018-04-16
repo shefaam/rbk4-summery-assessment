@@ -13,9 +13,11 @@
     <script src="app/app.js"></script>
 
     <div ng-controller="StarterController">
-      <h1> Pokemom </h1>
-      {{ starter }}
-      {{ 3 + 5 }}
+      <h1 ng-repaet= pokemom in bokemon> Pokemom </h1>
+      {{ db.bokemon.number }}
+      {{ db.bokemon.name }}
+      {{ db.bokemon.types }}
+      {{ db.bokemon.imageUrl }}
     </div>
   </body>
 </html>
