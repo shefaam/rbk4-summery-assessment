@@ -1,8 +1,11 @@
 var Pokemon = require('./Pokemon');
+var db = require('./db');
+
+
 
 // Complete each of the following controller methods
 exports.createOne = function (req, res) {
-
+db.insert()
 };
 
 exports.retrieve = function (req, res) {

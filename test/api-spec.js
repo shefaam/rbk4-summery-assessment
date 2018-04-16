@@ -62,6 +62,8 @@ describe('Pokemon API', function () {
   });
 
   describe('/api/pokemon', function () {
-    // Write your tests here!
+    it('should retrieve 200 status code',function(req,res){
+      expect(res.to.equal(200));
+    })
   });
 });

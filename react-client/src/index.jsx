@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom';
 import Starter from './components/starter.jsx';
 import $ from 'jquery';
 
+class App extends React.Component {
+	constructor(props){
+		
+
+
+	}
+}
 
 const App = (props) => <Starter num={ props.number } />;
 
