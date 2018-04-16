@@ -2,9 +2,38 @@ var pokemonRouter = require('express').Router();
 var pokemonController = require('./pokemonController');
 
 // Create route handlers for each of the six methods in pokemonController
-pokemonRouter.route('/')
+var poke = pokemonRouter.route('/')
+poke.get(function (req , res) {
+	res.send(pokemonController.retrieve)
+})
+poke.post(function (req , res) {
+	res.send(pokemonController.createOne)
+})
+poke.put(function (req , res) {
+	res.send(pokemonController.delete)
+})
 
-pokemonRouter.route('/:number')
- 
 
+var poNumber = pokemonRouter.route('/:number');
+
+ poNumber.get(function (req , res) {
+	res.send(pokemonController.retrieveOne)
+});
+
+poNumber.put(function (req , res) {
+	var number =  _.extend(number, req.body);
+	  number.save(function(err) {
+    if (err) {
+        return res.send('/number', {
+            errors: err.errors,
+            number: number
+        });
+    } else {
+        res.jsonp(number);
+    }
+})
+});
+poNumber.delete(function (req , res) {
+	res.send(pokemonController.deleteOne)
+})
 module.exports = pokemonRouter;

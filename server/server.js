@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var db = require('./db');
 var path = require('path');
+var route = require('./resources/pokemon/pokemonRouter');
 
 // Create the Express application:
 var app = express();
@@ -14,13 +15,8 @@ app.use(express.static(path.join(__dirname, '../angular-client')));
 
 // Import the pokemonRouter and assign it to the correct route:
 
-
 app.get('/', function (req, res) {
-	
-	db.Pokemon.find(function (err , data) {
-		if(err){res.send(err)}
-			console.log(data)
-	})
-
+	console.log(route.pokemonRouter)
 });
+	
 module.exports = app;
