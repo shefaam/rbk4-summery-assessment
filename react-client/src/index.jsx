@@ -5,7 +5,18 @@ import $ from 'jquery';
 
 class App extends React.Component {
 	constructor(props){
-		
+		super(props);
+		this.state = {
+			arr = [];
+		};
+
+		retrievePok (){
+			$.ajax({
+				url : "/api/pokemon",
+				type: "POST",
+				data :{name:name}
+			})
+		}
 
 
 	}
