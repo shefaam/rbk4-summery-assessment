@@ -27,7 +27,7 @@ app.post('/api/pokemon', function (req, res) {
 });
 
 app.delete('/api/pokemon', function (req, res) {
-  res.send()
+  res.send('delete')
 });
 
 app.get('/api/pokemon/:number', function (req, res) {
