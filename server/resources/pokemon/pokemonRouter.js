@@ -6,5 +6,13 @@ pokemonRouter.route('/')
 
 pokemonRouter.route('/:number')
  
+pokemonRouter.post('/pokemon/Create',pokemonController.createOne);
+pokemonRouter.get('/pokemon/:id/retrieve',pokemonController.retrieve);
+pokemonRouter.get('/pokemon/:id/retrieveOne',pokemonController.retrieveOne);
+pokemonRouter.post('/pokemon/:id/updateOne',pokemonController.updateOne);
+pokemonRouter.get('/pokemon/:id/updateOne',pokemonController.updateOne);
+pokemonRouter.get('/pokemon/:id/delete',pokemonController.delete);
+pokemonRouter.get('/pokemon/:id/deleteOne',pokemonController.deleteOne);
+
 
 module.exports = pokemonRouter;

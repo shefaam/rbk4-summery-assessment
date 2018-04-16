@@ -33,7 +33,7 @@ exports.retrieveOne = function (req, res) {
 };
 
 exports.updateOne = function (req, res) {
-	Pokemon.update({req.body.number || req.body.name || req.body.types || req.body.imageUrl},newData,function(err,data){
+	Pokemon.update({number:req.body.number || name:req.body.name || types:req.body.types || imageUrl:req.body.imageUrl},newData,function(err,data){
 		if(err){
 			res.send(err)
 		}else{
@@ -44,10 +44,23 @@ exports.updateOne = function (req, res) {
 };
 
 exports.delete = function (req, res) {
+	Pokemon.findAll({},function(err,data){
+		if(err){res.send(err)}
+			else{
+				res.remove(data)
+			}
+	})
 
 };
 
 exports.deleteOne = function (req, res) {
-
+Pokemon.findOneAndRemove({number:req.body.number || name:req.body.name || types:req.body.types || imageUrl:req.body.imageUrl},function(err,data){
+	if(err){
+		res.send(err)
+	}
+	else{
+		data.remove()
+	}
+})
 };
 

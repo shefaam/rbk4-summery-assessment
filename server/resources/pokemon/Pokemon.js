@@ -17,7 +17,4 @@ var Pokemon=mongoose.model('Pokemon',pokemonSchema);
 
 module.exports = Pokemon;
 
- // - [ ] `number`, a unique number
- //  - [ ] `name`, a unique string
- //  - [ ] `types`, an array of strings
- //  - [ ] `imageUrl`, a string
+ 
