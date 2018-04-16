@@ -1,5 +1,7 @@
 var rateLimiter = function (req, res, next) {
-  // TODO
+  res.header('X-Hello', 'World')
+  next()
+}
 };
 
 module.exports = rateLimiter;
