@@ -2,32 +2,53 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var db = require('./db');
+var fs = require('fs');
+var path = require('path');
+//var use = require('use');
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: true }));
+
 // Create the Express application:
 //after make the app equal express function
 var app= express();
 //now we must conenct the server with out html ????? i think we dont need
-//basic to know server work
+//when ask for home page
 app.get('/', function (req, res) {
   console.log("HERE TEST:");
-  res.send('YOUR REQUEST TO OPEN SERVER DONE');
+     res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
-
-//now GET for /api/pokemon  
+//now GET for /api/pokemon  /////////////////////////////////////////////////////////////////////////////
+//now GET for /api/pokemon  /////////////////////////////////////////////////////////////////////////////
+//Respond with JSON of all Pokémon
 app.get('/api/pokemon', function (req, res) {
-  console.log("HERE THE GET POKEMON:");
-  //Respond with JSON of all Pokémon
+  console.log("GET POKEMON:");
   //need to read file from root/data/pokemon.json
-  /*
-  var fs = require('fs');
-  fs.readFile("data/wx.hourly.txt", "utf8", function(err, data){
-    if(err) throw err;
-    //do operation on data that generates say resultArray;
-    return resultArray;
+  var dataArray
+  var resultArray=[];
+  fs.readFile(path.join(__dirname, '../data/pokemon.json'), function read(err, data){ 
+    // if erroe 
+    if(err){
+      //console log this error
+      throw err;
+    }
+    //but all the file contains pokemon data inside array
+    //and we use JSON.parse to convert it to obj
+    dataArray=JSON.parse(data);
+    console.log(dataArray[0])
+    res.send(dataArray)
+    //itreate for all the data and but the name for the pokemon in array
+    /*
+    for (var i = 0; i < dataArray.length; i++) {
+      resultArray.push(dataArray[i].name)
+    }
+    //now make it asyncronans     
+    processFile()
+    */
   });
-  res.send(resultArray);
-  */
-    res.send("resultArray 7");
-
+  function processFile() {
+    console.log("HERE THE DATA IN ASYNC:");
+    res.send(resultArray);
+  }
 });
 
 //now POST for /api/pokemon  
@@ -67,11 +88,8 @@ app.post('/', function (req, res) {
 
 // Import the pokemonRouter and assign it to the correct route:
 
-
 app.get('/', function (req, res) {
-	
 });
-
 module.exports = app;
 
 

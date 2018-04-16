@@ -44,7 +44,29 @@ npm install -g nodemon
 4- lets start with server (it is work) now start refactor it and do the get/ post etc
 lets commit now :)
 again to start server after install npm (nodemon start)
+lets conntinue now (i go to do some music :) )
 
+5- now need to render all the data in root/data/pokemon.json lets do it
+in get you must use async thing that mean wait after get the data do somthing so we 
+use another function to do the console	
+
+i go to eat now :p 
+
+I come again :)
+6- now i get the data now i want to show it in the screen
+
+I search many cant know the problem I will use learn two command only ..
+  npm install -g webpack
+
+seperataed
+  npm run react-dev
+  npm run server-dev
+oh my god same problem
+
+
+7- oh my god i ask for help destk and tell me the start point not from the table it is from the square check
+so the time now 1:38 PM 
+Now I will start the assesment :(
 
 
 * [MDN](https://developer.mozilla.org/en-US/)
