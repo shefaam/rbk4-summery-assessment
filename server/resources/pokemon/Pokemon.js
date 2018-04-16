@@ -9,10 +9,23 @@ imageUrl:String,
 
 });
 
+var Pokemon=mongoose.model('Pokemon',pokemonSchema);
+
+var save = function(data,callback){
+var poke=new Pokemon(data)
+db.poke.save(function(err,data){
+if(err){
+callback(err,null)
+}
+callback(null,data)
+
+})
+
+}
 
 // Register the pokemonSchema with Mongoose as the 'Pokemon' collection.
 
-var Pokemon=mongoose.model('Pokemon',pokemonSchema);
+
 
 
 module.exports = Pokemon;

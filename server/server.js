@@ -2,9 +2,9 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var db = require('./db');
-
+var app=express()
 // Create the Express application:
-// var app;
+
 
 app.post('/',function(req,res){
 var data=req.body;
@@ -18,6 +18,7 @@ res.send(data)
 })
 
 })
+
 // Attach middleware:
 
 
@@ -25,11 +26,11 @@ res.send(data)
 
 
 app.get('/', function (req, res) {
-	
+
 db.Pokemon.find(function(err,data){
 if(err){
 
-	console.log(err)
+console.log(err)
 }
 
 res.send(data)

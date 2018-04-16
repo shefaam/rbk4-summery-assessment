@@ -26,7 +26,15 @@ res.send(data)
 };
 
 exports.updateOne = function (req, res) {
-var 
+	var data=req.body
+db.Pokeman.findOneAndUpdate(data,function(err,pokeman){
+if(err){
+		console.log(err)
+	}
+
+	console.log('success')
+
+})
 
 };
 
@@ -35,10 +43,17 @@ db.Pokeman.remove(function(err,pokeman){
 	if(err){
 		console.log(err)
 	}
+
+	console.log('success')
 })
 
 };
 
 exports.deleteOne = function (req, res) {
-
+db.Pokeman.deleteOne({name:''},function(err,data){
+	if(err){
+		console.log(err)
+	}
+	res.send(data)
+})
 };

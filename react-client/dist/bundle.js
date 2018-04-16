@@ -49,6 +49,8 @@
 
 	'use strict';
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -67,9 +69,85 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var App = function App(props) {
-	  return _react2.default.createElement(_starter2.default, { num: props.number });
-	};
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	// const App = (props) => <Starter num={ props.number } />;
+	
+	var App = function (_React$Component) {
+	  _inherits(App, _React$Component);
+	
+	  function App(props) {
+	    _classCallCheck(this, App);
+	
+	    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+	
+	    _this.state = {
+	      items: [],
+	      imageUrl: ''
+	    };
+	    return _this;
+	  }
+	
+	  // this.onChange=this.onChange.bind(this)
+	  // this.setState=this.setState.bind(this)
+	
+	  _createClass(App, [{
+	    key: 'onChange',
+	    value: function onChange(e) {
+	      this.setState(_defineProperty({}, e.target.name, e.target.value));
+	    }
+	  }, {
+	    key: 'submit',
+	    value: function submit(imageUrl) {
+	      $ajax({
+	        type: 'POST',
+	        url: '/',
+	        data: {
+	          imageUrl: imageUrl
+	        }
+	
+	      });
+	
+	      $ajax({
+	        type: 'GET',
+	        url: '/',
+	        success: function success(data) {
+	          this.setState({
+	            items: data
+	          });
+	        }
+	
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement('input', { type: 'text', name: 'imageUrl', onChange: this.onChange }),
+	        _react2.default.createElement('button', { onclick: function onclick() {
+	            return submit(_this2.state.imageUrl);
+	          } }),
+	        _react2.default.createElement(
+	          'starter',
+	          null,
+	          this.state.items
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return App;
+	}(_react2.default.Component);
 	
 	_reactDom2.default.render(_react2.default.createElement(App, { number: 10 }), document.getElementById('app'));
 
@@ -22499,7 +22577,7 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	   value: true
 	});
 	
 	var _react = __webpack_require__(/*! react */ 1);
@@ -22508,18 +22586,27 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	//should iterate through pokemon.json and retrieve data to show 
+	//it to the user
+	
 	var Starter = function Starter(_ref) {
-	  var num = _ref.num;
-	  return _react2.default.createElement(
-	    'div',
-	    null,
-	    _react2.default.createElement(
-	      'h1',
-	      null,
-	      ' Pokemom! '
-	    ),
-	    num + 10
-	  );
+	   var num = _ref.num;
+	   return (
+	      // {items.map(item=>
+	      _react2.default.createElement(
+	         'div',
+	         null,
+	         _react2.default.createElement(
+	            'h1',
+	            null,
+	            ' num.imageUrl '
+	         ),
+	         num + 10
+	      )
+	
+	      // )}
+	
+	   );
 	};
 	
 	exports.default = Starter;

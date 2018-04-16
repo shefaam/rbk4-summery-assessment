@@ -8,7 +8,7 @@ var p= new Pokemon(data)
 db.p.save(function(err,data){
 if(err){
 
-	callback(err,null)
+callback(err,null)
 }
 callback(null,data)
 
