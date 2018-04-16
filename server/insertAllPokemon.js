@@ -10,7 +10,7 @@ var insertAllPokemon = function() {
 fs.readFile(path.join(__dirname, '../data')+'/pokemon.json' , (err, data) => {
   if (err) throw err;
   myData = JSON.parse(data);
-  for (var i = 1; i < myData.length; i++) {
+  for (var i = 0; i < myData.length; i++) {
   	
   	  var pokemon= new  db.Pokemon({
   	  	number: myData[i].number,
