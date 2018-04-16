@@ -5,13 +5,13 @@ var db = require('./db');
 var middlewares = ('../rateLimiter')
 // Create the Express application:
 var app = express();
-
+// var pokemonRouter = require('../pokemonRouter');
 var router = express.Router()
 // server.use(middlewares)
 // server.use(router)
 // Attach middleware:
-router.use(function timeLog (req, res, next) {
-  console.log('Time: ', Date.now())
+router.use(function(req, res, next) {
+  console.log('T')
   next()
 })
 

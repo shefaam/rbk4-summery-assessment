@@ -5,10 +5,9 @@ var pokemon = require('../pokemon/pokemon.json')
 // all 151 pokemon are inserted into the database
 var insertAllPokemon = function() {
 	pokemon.
-  find(...).
+  find().
   populate({
     path: 'data/pokemon.json',
-    match: { age: { $gte: 21 }},
     // Explicitly exclude `_id`, see http://bit.ly/2aEfTdB
     select: 'name -_id',
     options: { limit: 151 }
