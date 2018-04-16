@@ -4,9 +4,9 @@ var morgan = require('morgan');
 var db = require('./db');
 
 // Create the Express application:
-var app;
-
-
+var app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 // Attach middleware:
 
 
@@ -14,7 +14,7 @@ var app;
 
 
 app.get('/', function (req, res) {
-	
+	res.send("hello")
 });
 
 module.exports = app;

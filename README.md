@@ -50,6 +50,8 @@ We recommend [SimpleScreenRecorder](http://www.maartenbaert.be/simplescreenrecor
 * `npm install`
 * `npm start`
 * FILL ME IN WITH ADDTIONAL STEPS AS PART OF SUBMISSION PROCESS
+* `nodemon index.js`
+* `mongod`
 
 ## Requirements
 
