@@ -14,11 +14,12 @@ var app = express()
 
 // Import the pokemonRouter and assign it to the correct route:
 
+app.use(express.static(__dirname + '/../react-client/dist/'));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', function (req, res) {
-res.send('welcome khayauuu')
+res.render('index')
 });
 app.get('/api/pokemon', function (req, res){
 	ctrl.retrieve(req, res)

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Starter = ({num}) => (
+const Starter = (props) => (
   <div>
-    <h1> Pokemom! </h1> 
-    {num + 10}
+    <h1> Pokemom! </h1>
+  <h2> {props.name}</h2>
   </div>
 );
 
