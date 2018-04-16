@@ -1,10 +1,11 @@
+var pokemonRouter=require('./resources/pokemon/pokemonRouter.js')
 var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var db = require('./db');
 
 // Create the Express application:
-var app;
+var app=require('index.js');
 
 
 // Attach middleware:
@@ -13,7 +14,7 @@ var app;
 // Import the pokemonRouter and assign it to the correct route:
 
 
-app.get('/', function (req, res) {
+app.get('/index', function (req, res) {
 	
 });
 

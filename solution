@@ -1,0 +1,35 @@
+####back-end:
+##Connect Mongoose to your local Mongo database in `db/index.js`
+
+--i do it
+
+##Create a Pokémon model:
+
+--I do it
+
+##In `insertAllPokemon.js`, write a function that can populate your Mongo database with the 151 original Pokémon found in `data/pokemon.json`, then run the script/invoke the function so that the database is populated.
+
+--I search how to populate Mongo database with json file
+i found a code but it does not work
+
+##Complete the controller:
+
+--these functions will deal whith the data that resceved from the client and update the mongoDb acording to it
+
+##Import `pokemonRouter` into `server.js`
+
+--using the require . to allow the server to reach the functions
+
+##### Front-end:
+// [ ] Display all Pokémon (with their images)
+// I have to send ajax git request to the server and the server should gie the data from database and send it again to the client. when the client recive the data he shold but it inside map function to iterate over all the element and display each element of them 
+
+//- [ ] Add a new Pokémon
+// will send a ajax POST request to the server containing the information of the pokemon 
+
+//Filter Pokémon based on their type (but NOT on other properties)
+
+// make a <div> for each type of pokemon and show the data of the pokemon in the that div if the pokemon has the same type
+
+
+
