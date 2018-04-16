@@ -1,13 +1,16 @@
-var mongoose = require('mongoose');
-var mongoUri = 'mongodb://localhost/pokemon';
+// var mongoose = require('mongoose');
+// var mongoUri = 'mongodb://localhost/pokemon';
 
-// Connect Mongoose to our local MongoDB via URI specified above and export it below
-mongoose.connect(mongoUri);
-db=mongoose.connection;
+// // Connect Mongoose to our local MongoDB via URI specified above and export it below
+// mongoose.connect(mongoUri);
+// db=mongoose.connection;
 
-db.on('connected', function(){
+// db.on('connected', function(){
 
-	console.log("connect to db");
-});
+// 	console.log("connect to db");
+// });
 
-module.exports = db;
+// module.exports = db;
+
+
+

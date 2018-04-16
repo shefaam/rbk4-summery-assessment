@@ -1,13 +1,12 @@
 
 fs = require('fs')
-
 // Fill in the definition of insertAllPokemon so that when 
 // this file is run in the terminal with `node insertAllPokemon.js`, 
 // all 151 pokemon are inserted into the database
 
 var pokemonModel=require('./resources/pokemon/Pokemon.js')
 
-console.log(pokemonModel);
+//console.log(pokemonModel);
 
 var insertAllPokemon = function(callback) {
 
@@ -39,25 +38,22 @@ insertAllPokemon(function(data){
 	  	//console.log(data[i].number);
 
 	  // var newPokemon={number:data[i].number,name:data[i].name,types:data[i].types,imageUrl:data[i].imageUrl}
-	  var newPokemon={number:data[i].number,name:data[i].name}
+	  var newPokemon={number:data[i].number,name:data[i].name,types:data[i].types,imageUrl:data[i].imageUrl}
 
 
 	  var pokemonInstance=new pokemonModel(newPokemon);
 
-	  pokemonInstance.save(function(err,pokemonInstance){
+	  pokemonInstance.save(function(err){
 
 	  		//console.log('any thing')
-	  		if(err){
+	  		
+  		if (err) console.log("error");
 
-	  			throw new Error (err);
-	  		}
-
-	  		else {
-	  			console.log("success insertion");
+	  	else {
+	  		console.log("success insertion");
 	  		}
 	  	});
-	  }
+	  
 
-
-
+}
 });
