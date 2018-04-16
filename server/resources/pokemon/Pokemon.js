@@ -1,3 +1,5 @@
+
+var add=require('./pokemon/pokemon.js');
 var mongoose = require('mongoose');
 // Complete the pokemonSchema below.
 
@@ -14,5 +16,15 @@ imageUrl:String
 var Pokemon = mongoose module(Pokemon,pokemonSchema);
  
  var poke = new Pokemon;
+add.save(function (err, data) {
+    if (err){
+console.log(err);
+     }else{
+console.log(data)
+     }
+
+  });
+
+
 
 module.exports = Pokemon;

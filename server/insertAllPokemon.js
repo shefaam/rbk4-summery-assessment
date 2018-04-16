@@ -1,6 +1,4 @@
 var ins=require('data/pokemon.json');
-var add=require('./pokemon/pokemon.js')
-
 // Fill in the definition of insertAllPokemon so that when 
 // this file is run in the terminal with `node insertAllPokemon.js`, 
 // all 151 pokemon are inserted into the database
@@ -14,14 +12,7 @@ ins.find(function(ree,pokemon){
   })
 };
 
-add.save(function (err, data) {
-    if (err){
-console.log(err);
-     }else{
-console.log(data)
-     }
 
-  });
 
 // NOTE: DO NOT invoke this function as part of your
 // server code - it is meant to only be run once so that
