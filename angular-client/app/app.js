@@ -12,12 +12,12 @@ app.controller('myCtrl', function($scope, $http) {
         $scope.pok = response.statusText;
     });
   
-    $scope.Done = function (dat) {
-    	console.log($scope.name)
+    $scope.Done = function () {
+
     	   $http({
         method : "POST",
         url : "/name",
-        data : {name : $scope.dat},
+        data : {name : $scope.name},
     }).then(function mySuccess(response) {
         console.log(response.data);
     	
