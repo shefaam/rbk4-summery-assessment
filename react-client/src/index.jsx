@@ -68,11 +68,21 @@ class Pokemon extends React.Component {
 
   }
 
+
+  handleChange = event => {
+    this.setState({
+      inputvalue : event.target.value;
+    });
+  };
+
+
   render() {
     return (
       <div>
         <h1>Pokemon World!</h1>
         <button onClick={this.display}>Display</button>
+        <button onClick={this.update}>Add</button>
+        <input type="text" value={this.state.inputvalue} onChange={this.handleChange} />
       </div>
     );
   }
