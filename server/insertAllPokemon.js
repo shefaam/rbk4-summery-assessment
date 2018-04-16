@@ -22,6 +22,7 @@ var insertAllPokemon = function() {
 var content = JSON.parse(Assets.getText('pokemon.json'))
 Pokemon.Pokemon.insert(content)
 
+
 };
 
 // NOTE: DO NOT invoke this function as part of your
