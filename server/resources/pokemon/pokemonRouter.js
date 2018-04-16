@@ -5,6 +5,6 @@ var pokemonController = require('./pokemonController');
 pokemonRouter.route('/')
 
 pokemonRouter.route('/:number')
- 
+
 
 module.exports = pokemonRouter;

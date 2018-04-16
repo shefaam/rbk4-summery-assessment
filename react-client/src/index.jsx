@@ -3,8 +3,40 @@ import ReactDOM from 'react-dom';
 import Starter from './components/starter.jsx';
 import $ from 'jquery';
 
+//
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      items: []
+    };
 
-const App = (props) => <Starter num={ props.number } />;
+  }
+  // here the ajax request bring the data from the api
 
-ReactDOM.render(<App number={ 10 }/>, document.getElementById('app'));
+  componentDidMount() {
+    var x = this
+    $.ajax({
+      url:'http://127.0.0.1:3000/api/pokemon',
+      type: 'GET',
+      success: function(data){
+        x.setState({items: data})
+      },
+      error: function(error){
+        console.log(error);
+      }
+    })
+  }
 
+  render() {
+    //here i want to do the map to pass every item to starter
+    this.componentDidMount()
+    this.state.items.map((item)=>{
+      return <Starter item={item} />
+    })
+
+    }
+  }
+
+
+ReactDOM.render(<App/>, document.getElementById('app'));
