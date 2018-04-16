@@ -95,8 +95,8 @@ Using the existing code provided in `server/`, follow the steps below to build o
 Inside of `client/`, implement a single page front end to interact with this API using either Angular or React. There is a webpack config file already set up if you are choosing react - please read the `webpack.config.js` carefully before starting.
 
 Your front end should be served from Express and should allow the user to:
-- [ ] Display all Pokémon (with their images)
-- [ ] Add a new Pokémon
+- [*] Display all Pokémon (with their images)
+- [] Add a new Pokémon
 - [ ] Filter Pokémon based on their type (but NOT on other properties)
 
 ### Middleware

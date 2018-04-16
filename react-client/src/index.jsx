@@ -33,8 +33,14 @@ class App extends React.Component {
 
 	render(){
 	return (<div>
+			<form>
+				Name: <input id="name" type="text"/>
+				number: <input id="number" type="text"/>
+				ImgUrl: <input id="url" type="text"/>
+				<button type="submit">Submit</button>
+			</form>
 			<Starter num={ this.props.number } arr={this.state.arr}/>
-			<button onClick={this.allPok}>All</button>
+			<button onClick={this.allPok}>Get me all</button>
 			<div></div>
 			</div>);
 	}
