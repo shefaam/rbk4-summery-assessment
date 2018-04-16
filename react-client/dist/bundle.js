@@ -81,32 +81,57 @@
 		function App(props) {
 			_classCallCheck(this, App);
 	
-			return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+			var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+	
+			_this.state = {
+				pokemons: []
+			};
+	
+			return _this;
 		}
 	
 		_createClass(App, [{
-			key: 'sendUser',
-			value: function sendUser(user) {
+			key: 'addPok',
+			value: function addPok(number, name, types, image) {
 				_jquery2.default.ajax({
 					type: 'POST',
 					url: '/pokemons',
-					data: { user: user },
+					data: { number: number, name: name, types: types, image: image },
 					success: function success(data) {
-						console.log(data);
+						console.log('sdadsadsa', data);
+					}
+				});
+			}
+		}, {
+			key: 'showPokemon',
+			value: function showPokemon() {
+				var that = this;
+				_jquery2.default.ajax({
+					type: 'GET',
+					url: '/pokemons',
+	
+					success: function success(data) {
+						that.setState({
+							pokemons: data
+						});
 					}
 				});
 			}
 		}, {
 			key: 'render',
 			value: function render() {
-				return _react2.default.createElement(_starter2.default, { send: this.sendUser.bind(this) });
+				return _react2.default.createElement(
+					'div',
+					null,
+					_react2.default.createElement(_starter2.default, { poks: this.state.pokemons, send: this.addPok.bind(this), show: this.showPokemon.bind(this) })
+				);
 			}
 		}]);
 	
 		return App;
 	}(_react2.default.Component);
 	
-	_reactDom2.default.render(_react2.default.createElement(App, { number: 10 }), document.getElementById('app'));
+	_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('app'));
 
 /***/ }),
 /* 1 */
@@ -22560,24 +22585,57 @@
 			var _this = _possibleConstructorReturn(this, (Starter.__proto__ || Object.getPrototypeOf(Starter)).call(this, props));
 	
 			_this.state = {
-				val: ''
+				number: 0,
+				name: '',
+				types: '',
+				image: ''
 			};
 			_this.onChange = _this.onChange.bind(_this);
-			_this.clickSend = _this.clickSend.bind(_this);
+			_this.onChangeName = _this.onChangeName.bind(_this);
+			_this.onChangetypes = _this.onChangetypes.bind(_this);
+			_this.onChangeImage = _this.onChangeImage.bind(_this);
+			_this.Add = _this.Add.bind(_this);
+			_this.showPok = _this.showPok.bind(_this);
 			return _this;
 		}
 	
 		_createClass(Starter, [{
-			key: 'onChange',
-			value: function onChange(e) {
+			key: 'onChangeName',
+			value: function onChangeName(e) {
 				this.setState({
-					val: e.target.value
+					name: e.target.value
 				});
 			}
 		}, {
-			key: 'clickSend',
-			value: function clickSend() {
-				this.props.send(this.state.val);
+			key: 'onChangetypes',
+			value: function onChangetypes(e) {
+				this.setState({
+					types: e.target.value
+				});
+			}
+		}, {
+			key: 'onChangeImage',
+			value: function onChangeImage(e) {
+				this.setState({
+					image: e.target.value
+				});
+			}
+		}, {
+			key: 'showPok',
+			value: function showPok() {
+				this.props.show();
+			}
+		}, {
+			key: 'onChange',
+			value: function onChange(e) {
+				this.setState({
+					number: e.target.value
+				});
+			}
+		}, {
+			key: 'Add',
+			value: function Add() {
+				this.props.send(this.state.number, this.state.name, this.state.types, this.state.image);
 			}
 		}, {
 			key: 'render',
@@ -22585,12 +22643,50 @@
 				return _react2.default.createElement(
 					'div',
 					null,
-					_react2.default.createElement('input', { value: this.state.val, onChange: this.onChange }),
+					'Number : ',
+					_react2.default.createElement('input', { value: this.state.number, onChange: this.onChange }),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('br', null),
+					'Name : ',
+					_react2.default.createElement('input', { value: this.state.name, onChange: this.onChangeName }),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('br', null),
+					'Types : ',
+					_react2.default.createElement('input', { value: this.state.types, onChange: this.onChangetypes }),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('br', null),
+					'Image : ',
+					_react2.default.createElement('input', { value: this.state.image, onChange: this.onChangeImage }),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('br', null),
 					_react2.default.createElement(
 						'button',
-						{ onClick: this.clickSend },
-						'Send User'
-					)
+						{ onClick: this.Add },
+						'Add Pokemon'
+					),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement(
+						'button',
+						{ onClick: this.showPok },
+						'showPok'
+					),
+					this.props.poks.map(function (p) {
+						return _react2.default.createElement(
+							'h1',
+							null,
+							p.number,
+							' ',
+							p.name,
+							' ',
+							p.types,
+							' ',
+							_react2.default.createElement('br', null),
+							' ',
+							_react2.default.createElement('br', null),
+							_react2.default.createElement('image', { src: p.imageUrl })
+						);
+					})
 				);
 			}
 		}]);

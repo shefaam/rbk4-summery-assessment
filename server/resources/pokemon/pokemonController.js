@@ -39,7 +39,19 @@ exports.retrieveOne = function (req, res) {
 };
 
 exports.updateOne = function (req, res) {
-
+	Pokemon.Pokemon.find(function(err,data){
+		if(err){
+			console.log(err);
+		}else{
+			for (var i = 0; i < data.length; i++) {
+				if(data[i].number===req.body.number){
+					Pokemon.Pokemon.update(data[i],function(err,data){
+						res.send(data);
+					})
+				}
+			}
+		}
+	})
 };
 
 exports.delete = function (req, res) {
@@ -54,5 +66,20 @@ exports.delete = function (req, res) {
 };
 
 exports.deleteOne = function (req, res) {
-	
+	Pokemon.Pokemon.find(function(err,data){
+		if(err){
+			console.log(err);
+		}else{
+			for (var i = 0; i < data.length; i++) {
+				if(data[i].number===req.body.number){
+					Pokemon.Pokemon.delete(data[i],function(err,data){
+						if(err){
+							console.log(ess)
+						}
+						res.delete(data);
+					})
+				}
+			}
+		}
+	})
 };
