@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var pokemonSchema = new mongoose.Schema({ //object that will take the contents of the table.
 	name: String,
 	number: Number,
-	types: Array,
+	types: [String],
 	imageURL: String
 });
 
