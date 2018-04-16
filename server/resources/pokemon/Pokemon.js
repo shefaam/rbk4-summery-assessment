@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var pokemonSchema = new mongoose.Schema({
 	number: {type:Number,unique:true},
 	name: {type:String,unique:true},
-	types: String,
+	types: [String],
 	imageUrl: String
 });
 
