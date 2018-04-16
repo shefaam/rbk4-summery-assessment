@@ -1,4 +1,7 @@
-
+var data=require('./data/pokemon.json')
+var connection=require('/db/index.js')
+var schema=require('/resources/pokemon/Pokemon.js')
+console.log(data)
 
 // Fill in the definition of insertAllPokemon so that when 
 // this file is run in the terminal with `node insertAllPokemon.js`, 
