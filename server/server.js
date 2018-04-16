@@ -1,20 +1,20 @@
 var express = require( 'express' );
-var bodyParser = require( 'body-parser' );
-var morgan = require( 'morgan' );
-var db = require( './db' );
-var path = require( 'path' )
+var   bodyP = require( 'body-parser' );
+var  morgan = require( 'morgan' );
+var      db = require( './db' );
+var    path = require( 'path' )
 var pokemon = require( "./resources/pokemon/pokemon.js" )
 var limiter = require( './middleware/rateLimiter.js' )
 // Import the pokemonRouter and assign it to the correct route:
-var pokemonRout = require( "./resources/pokemon/pokemonRouter.js" )
+var  pRoute = require( "./resources/pokemon/pokemonRouter.js" )
 // Create the Express application:
-var app = express();
+var     app = express();
 // Attach middleware:  
-app.use( bodyParser.json() )
-app.use( bodyParser.urlencoded( { extended: false } ) )
+app.use( bodyP.json() )
+app.use( bodyP.urlencoded( { extended: false } ) )
 app.use( morgan( 'combined' ) )
 app.use( limiter )
-app.use( express.static( path.join( __dirname + "/react-client" ) ) )
+app.use( express.static( path.join( __dirname + "react-client/src" ) ) )
 // ----------------------------------------------------------------
 
 
