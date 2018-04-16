@@ -1,10 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Starter from './components/starter.jsx';
+import poke from './components/starter.jsx';
 import $ from 'jquery';
 
 
-const App = (props) => <Starter num={ props.number } />;
+const App = (props) => <poke num={ this.props.number }/> ;
+// class App extends React.Component {
+// 	constructor(props){
+// 		super(props)
+// 		this.state = {
+// 			pokemons:[],
+// 		}
+// 	}
 
+// 	render(){
+// 		return (
+// 			<div>
+// 				<poke />
+// 			</div>
+// 			)
+// 	}
+// } 
 ReactDOM.render(<App number={ 10 }/>, document.getElementById('app'));
 
