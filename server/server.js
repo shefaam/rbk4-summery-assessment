@@ -12,7 +12,7 @@ app.use(bodyParser.json())
 
 // Attach middleware:
 
-
+	
 // Import the pokemonRouter and assign it to the correct route:
 
 // app.use('/',pokemonRouter)
@@ -21,13 +21,14 @@ app.get('/', function (req, res) {
 	res.send(data)
 	
 });
-app.post('api/pokemon',function(req,res){
+app.post('/api/pokemon',function(req,res){
+	console.log(req.body)
 	var number=req.body.number;
 	var name=req.body.name;
 	var types=req.body.types;
 	var imageUrl=req.body.imageUrl;
       data.push({"number":number,"name":name,"types":types,"imageUrl":imageUrl})
-      res.send(data)
+      res.send(number, name)
 })
 
 module.exports = app;

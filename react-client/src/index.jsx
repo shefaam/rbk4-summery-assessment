@@ -36,12 +36,12 @@ class App extends React.Component{
 	fix(poke){
 		$.ajax({
 			type:'POST'
-			url:'/',
+			url:'/api/pokemon',
 			data:this.setState({
 				this.state.pokemons.push(poke)
 			}),
 			success:function (data) {
-				data.save();
+				console.log('data is posted ')
 			}
 			 error: function (xhr, ajaxOptions, thrownError) {
 				    alert(xhr.status);
