@@ -9,16 +9,35 @@ import $ from 'jquery';
  	constructor(props){
  		super(props);
  		this.state{
- 			Starter
+ 			isToggleOn:true
  		}
-
+ 		this.handelEvent=this.handelEvent.bind(this)
  	}
 
  }
- 
+ getPokemon(){
+ 	var that=this;
+ 	$.ajax({
+ 		type:"GET"
+ 		url:'index.html',
+ 		type:data,
+ 		success:function(){
+
+ 		}
+ 	})
+ }
+
+ handelEvent(e){
+ 	this.setsate(
+ 		isToggleOn:e.target.value 
+
+ 	})
+ }
  render(){
  	return(
- 		<div>Starter num={ props.number }
+ 		<div Starter num={ props.number }>
+ 		<input onChange={}
+ 		<button onClick={this.handelEvent}>this.state.</button>
  		</div>
  		)
  }

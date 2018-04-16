@@ -7,7 +7,7 @@ exports.createOne = function (req, res) {
 		if(err){
 			res.send(err);
 		}
-		res.send(newPokemon)
+		res.json(newPokemon)
 	})
 
 };
