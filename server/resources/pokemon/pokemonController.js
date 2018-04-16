@@ -2,7 +2,7 @@ var Pokemon = require('./Pokemon');
 var bodyParser = require('body-parser')
 // Complete each of the following controller methods
 exports.createOne = function (req, res) {
-var instance=new Pokemon({number:req.body.number,name:req.body.name,types:req.body.types,imageUrl:req.body.imageUrl}
+var instance=new Pokemon({number:req.body.number,name:req.body.name,types:req.body.types,imageUrl:req.body.imageUrl});
 instance.save(function(err,data){
 	if(err){res.send(err)}
 		else{
@@ -33,7 +33,7 @@ exports.retrieveOne = function (req, res) {
 };
 
 exports.updateOne = function (req, res) {
-	Pokemon.update({number:req.body.number || name:req.body.name || types:req.body.types || imageUrl:req.body.imageUrl},newData,function(err,data){
+	Pokemon.update({/*'number':req.body.number||'name':req.body.name||'types':req.body.types||'imageUrl':req.body.imageUrl*/},newData,function(err,data){
 		if(err){
 			res.send(err)
 		}else{
@@ -45,7 +45,9 @@ exports.updateOne = function (req, res) {
 
 exports.delete = function (req, res) {
 	Pokemon.findAll({},function(err,data){
-		if(err){res.send(err)}
+		if(err){
+			res.send(err)
+		}
 			else{
 				res.remove(data)
 			}
@@ -54,7 +56,7 @@ exports.delete = function (req, res) {
 };
 
 exports.deleteOne = function (req, res) {
-Pokemon.findOneAndRemove({number:req.body.number || name:req.body.name || types:req.body.types || imageUrl:req.body.imageUrl},function(err,data){
+Pokemon.findOneAndRemove({/*'number':req.body.number || 'name':req.body.name || 'types':req.body.types || 'imageUrl':req.body.imageUrl*/},function(err,data){
 	if(err){
 		res.send(err)
 	}

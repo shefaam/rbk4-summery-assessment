@@ -70,7 +70,7 @@ Using the existing code provided in `server/`, follow the steps below to build o
 |:--------------------:|:---------:|:------------:|:------------------------------------------------------------------------:|
 | /api/pokemon         |    GET    |    empty     |                                               Respond with JSON of all Pokémon |
 | /api/pokemon         |    POST   |     JSON     |                    Create new Pokémon and respond with JSON of created Pokémon |
-| /api/pokemon         |   DELETE  |    empty     |                 Delete all Pokémon in database and respond with JSON of deleted Pokémon |
+| /api/pokemon         |   DELETE  |    empty     |        Delete all Pokémon in database and respond with JSON of deleted Pokémon |
 | /api/pokemon/:number |    GET    |    empty     |                     Respond with JSON of single Pokémon with matching `number` |
 | /api/pokemon/:number |    PUT    |     JSON     | Update Pokémon with matching `number` and respond with JSON of updated Pokémon |
 | /api/pokemon/:number |   DELETE  |    empty     | Delete Pokémon with matching `number` and respond with JSON of deleted Pokémon |
