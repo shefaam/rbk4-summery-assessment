@@ -1,10 +1,21 @@
 import React from 'react';
 
-const Starter = ({num}) => (
-  <div>
-    <h1> Pokemom! </h1> 
-    {num + 10}
-  </div>
+const poke = (props) => (
+  	<div>
+  {props.pokemons.map((pokemon)=>{
+  	return(
+  		<div>
+  			<div>
+  				{pokemon.name}
+  			</div>
+  			<div>
+  				<img src={pokemon.imageUrl}/>
+  			</div>
+  		</div>
+  		)
+  })}
+    
+    </div>
 );
 
-export default Starter;
+export default poke;

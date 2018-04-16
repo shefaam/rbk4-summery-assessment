@@ -82,7 +82,12 @@
 		function App(props) {
 			_classCallCheck(this, App);
 	
-			return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+			var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+	
+			_this.state = {
+				pokemons: []
+			};
+			return _this;
 		}
 	
 		_createClass(App, [{
@@ -91,7 +96,7 @@
 				return _react2.default.createElement(
 					'div',
 					null,
-					_react2.default.createElement(_starter2.default, { num: this.props.number })
+					_react2.default.createElement('poke', { num: this.props.number })
 				);
 			}
 		}]);
@@ -22536,21 +22541,30 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var Starter = function Starter(_ref) {
-	  var num = _ref.num;
+	var poke = function poke(props) {
 	  return _react2.default.createElement(
 	    'div',
 	    null,
-	    _react2.default.createElement(
-	      'h1',
-	      null,
-	      ' Pokemom! '
-	    ),
-	    num + 10
+	    props.pokemons.map(function (pokemon) {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          pokemon.name
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement('img', { src: pokemon.imageUrl })
+	        )
+	      );
+	    })
 	  );
 	};
 	
-	exports.default = Starter;
+	exports.default = poke;
 
 /***/ }),
 /* 185 */

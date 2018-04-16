@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Starter from './components/starter.jsx';
+import poke from './components/starter.jsx';
 import $ from 'jquery';
 
 
@@ -8,12 +8,15 @@ import $ from 'jquery';
 class App extends React.Component {
 	constructor(props){
 		super(props)
+		this.state = {
+			pokemons:[],
+		}
 	}
 
 	render(){
 		return (
 			<div>
-			<Starter num={ this.props.number }/>
+			<poke num={ this.props.number }/>
 			</div>
 			)
 	}
