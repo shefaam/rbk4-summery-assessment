@@ -12,6 +12,7 @@ var insertAllPokemon = function() {
 			types: pokemons[i].types,
 			imageUrl: pokemons[i].imageUrl
 		}
+
 		var pokemon = new Pokemon(obj);
 	db.pokemon.save(obj,function(err,data){
 		if(err){
@@ -19,8 +20,9 @@ var insertAllPokemon = function() {
 		}
 		console.log('hello',data)
 	})//am not sure if this the right, i will be back.
-};
+}
 
+};
 // NOTE: DO NOT invoke this function as part of your
 // server code - it is meant to only be run once so that
 // you have access to data to work with
