@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 //now GET for /api/pokemon  /////////////////////////////////////////////////////////////////////////////
 //Respond with JSON of all Pokémon
 app.get('/api/pokemon', function (req, res) {
-  console.log("GET POKEMON:");
+  console.log("GET ALL POKEMON:");
   //need to read file from root/data/pokemon.json
   var dataArray
   var resultArray=[];
@@ -34,21 +34,9 @@ app.get('/api/pokemon', function (req, res) {
     //but all the file contains pokemon data inside array
     //and we use JSON.parse to convert it to obj
     dataArray=JSON.parse(data);
-    console.log(dataArray[0])
     res.send(dataArray)
-    //itreate for all the data and but the name for the pokemon in array
-    /*
-    for (var i = 0; i < dataArray.length; i++) {
-      resultArray.push(dataArray[i].name)
-    }
-    //now make it asyncronans     
-    processFile()
-    */
+    //now make it asyncronans        
   });
-  function processFile() {
-    console.log("HERE THE DATA IN ASYNC:");
-    res.send(resultArray);
-  }
 });
 
 //now POST for /api/pokemon  
