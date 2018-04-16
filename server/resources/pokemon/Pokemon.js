@@ -48,6 +48,11 @@ function removeOne(num,callback){
 
 }
 
+// function update(num,callback){
+// 	Pokemon.findOne()
+
+// }
+
 module.exports.Pokemon = Pokemon;
 module.exports.save = save;
 module.exports.fetch = fetch;

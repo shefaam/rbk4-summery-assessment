@@ -35,16 +35,43 @@ class App extends React.Component{
 
 	create(){
 		var x=this
-		console.log(x.state.states.name)
+		//console.log(x.state.states.name)
 		$.ajax({
 		  type: "POST",
 		  url: '/',
-		  //data:{name:data.name,types:data.types,image:data.image,number:data.num}
-		  data:{name:'alaa'},
+		  data:{name:x.state.states.name,types:x.state.states.types,image:x.state.states.image,number:x.state.states.num},
+		  
 		  success: function(){
 		  	console.log('done')}
 		  
 		});
+	}
+
+	update(){
+		var x = this;
+		$.ajax({
+		type: "PUT",
+		  url: '/:'+ x.state.states.num,
+		  data:{name:x.state.states.name,types:x.state.states.types,image:x.state.states.image,number:x.state.states.num},
+		  
+		  success: function(){
+		  	console.log('done')}
+		  
+
+		})
+
+	}
+	delete(){
+		var x = this;
+		$.ajax({
+		type: "DELETE",
+		 url: '/:'+ x.state.states.num,		  
+		 success: function(){
+		  console.log('done')}
+		  
+
+		})
+
 	}
 
 	onChange(e){
@@ -67,6 +94,8 @@ class App extends React.Component{
 		<input name= "num" value={this.state.states.num} onChange={this.onChange} placeholder="enter the number"/><br></br><br></br>
 
 		<button onClick={this.create}> CREATE </button><br></br><br></br>
+		<button onClick={this.update}> UPDATE </button><br></br><br></br>
+		<button onClick={this.delete}> DELETE </button><br></br><br></br>
 
 		<button onClick={this.fetch}> DISPLAY </button>
 				

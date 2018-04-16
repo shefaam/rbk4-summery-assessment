@@ -1,5 +1,5 @@
 var pokemonRouter = require('express').Router();
-var pokemonController = require('./pokemonController');
+var pokemonController = require('./pokemonController.js');
 
 // Create route handlers for each of the six methods in pokemonController
 //pokemonRouter.route('/').get(pokemonController.retrieve);
@@ -22,10 +22,20 @@ var pokemonController = require('./pokemonController');
 // .delete(pokemonController.delete)
 
  //pokemonRouter.route('/',function(){}) 
+
+
+// pokemonRouter.get('/',function(req,res){
+// 	res.send(pokemonController.retrieve)
+// 	// console.log('hi')
+// 	// res.send()
+// })
+
 pokemonRouter.get('/',function(){
 	pokemonController.retrieve
-	//console.log('hi')
+	// console.log('hi')
+	// res.send()
 })
+
 pokemonRouter.post('/',function(){
 	pokemonController.createOne
 	//console.log('hi')

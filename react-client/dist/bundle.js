@@ -114,12 +114,40 @@
 			key: 'create',
 			value: function create() {
 				var x = this;
-				console.log(x.state.states.name);
+				//console.log(x.state.states.name)
 				_jquery2.default.ajax({
 					type: "POST",
 					url: '/',
-					//data:{name:data.name,types:data.types,image:data.image,number:data.num}
-					data: { name: 'alaa' },
+					data: { name: x.state.states.name, types: x.state.states.types, image: x.state.states.image, number: x.state.states.num },
+	
+					success: function success() {
+						console.log('done');
+					}
+	
+				});
+			}
+		}, {
+			key: 'update',
+			value: function update() {
+				var x = this;
+				_jquery2.default.ajax({
+					type: "PUT",
+					url: '/:' + x.state.states.num,
+					data: { name: x.state.states.name, types: x.state.states.types, image: x.state.states.image, number: x.state.states.num },
+	
+					success: function success() {
+						console.log('done');
+					}
+	
+				});
+			}
+		}, {
+			key: 'delete',
+			value: function _delete() {
+				var x = this;
+				_jquery2.default.ajax({
+					type: "DELETE",
+					url: '/:' + x.state.states.num,
 					success: function success() {
 						console.log('done');
 					}
@@ -158,6 +186,20 @@
 						'button',
 						{ onClick: this.create },
 						' CREATE '
+					),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement(
+						'button',
+						{ onClick: this.update },
+						' UPDATE '
+					),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement('br', null),
+					_react2.default.createElement(
+						'button',
+						{ onClick: this.delete },
+						' DELETE '
 					),
 					_react2.default.createElement('br', null),
 					_react2.default.createElement('br', null),
