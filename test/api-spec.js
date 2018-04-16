@@ -63,5 +63,6 @@ describe('Pokemon API', function () {
 
   describe('/api/pokemon', function () {
     // Write your tests here!
+    // that will help assure future developers that the API is working as intended.
   });
 });

@@ -42,7 +42,7 @@ Add a Monitor Capture source:
 From the main screen, click `Start Recording`, and minimize the program.
 ### To stop recording
 Simply click `Stop Recording` and your screen recording will show up at the `File Path` you specified.
-## Linux
+## Linux				
 We recommend [SimpleScreenRecorder](http://www.maartenbaert.be/simplescreenrecorder/)
 
 ## How to start this app
