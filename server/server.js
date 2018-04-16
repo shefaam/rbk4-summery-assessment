@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var db = require('./db');
 var Pokemon = require('./resources/pokemon/Pokemon')
+var ctrl = require('./resources/pokemon/pokemonController')
 // Create the Express application:
 var app = express()
 
@@ -19,80 +20,22 @@ app.get('/', function (req, res) {
 res.send('welcome khayauuu')
 });
 app.get('/api/pokemon', function (req, res){
-	Pokemon.find({}, function(err, data){
-		if (err){
-			res.statusCode(500)
-		}
-		else {
-			res.json(data)
-		}
-	});
+	ctrl.retrieve(req, res)
 });
 app.post('/api/pokemon', function (req, res){
-	var name = req.body.name
-	var number = req.body.number
-	var types = req.body.types
-	var imageUrl = req.body.imageUrl
-	var pokemon = new Pokemon({
-		name : name,
-		number : number,
-		types : types,
-		imageUrl : imageUrl
-	})
-	pokemon.save(function(err, data){
-		if (err){
-			console.log(err);
-		}else {
-			console.log(data);
-		}
-	})
-	res.json(pokemon)
+	ctrl.createOne(req, res)
 });
 app.delete('/api/pokemon', function (req, res){
-	Pokemon.remove({}, function(err, data){
-		if (err){
-			console.log(err);
-		}else {
-			res.json(data)
-		}
-	})
+	ctrl.delete(req, res)
 });
 app.get('/api/pokemon/:number', function (req, res){
-	Pokemon.findOne(req.params, function(err, data){
-		if (err){
-			console.log(err);
-		}
-		else {
-			res.json(data)
-		}
-	})
+	ctrl.retrieveOne(req, res)
 });
 app.put('/api/pokemon/:number', function (req, res){
-	Pokemon.findOne(req.params, function(err, data){
-		if (err){
-			console.log(err);
-		}
-		else {
-			Pokemon.set(req.body)
-			var newData = Pokemon.findOne(req.params, function(err, newData){
-				if (err){
-					console.log(err);
-				}
-				else {
-					res.json(newData)
-				}
-			})
-		}
-	})
+ctrl.updateOne(req, res)
 });
 app.delete('/api/pokemon/:number', function (req, res){
-	Pokemon.remove(req.params, function(err, data){
-		if (err){
-			console.log(err);
-		}else {
-			res.json(data)
-		}
-	}
+	ctrl.deleteOne(req, res)
 });
 
 
