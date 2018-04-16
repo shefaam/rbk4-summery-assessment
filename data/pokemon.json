@@ -1,5 +1,5 @@
 
-[{
+var data =[{
   "number": 1,
   "name": "Bulbasaur",
   "types": [

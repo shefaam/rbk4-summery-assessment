@@ -4,6 +4,8 @@
 // this file is run in the terminal with `node insertAllPokemon.js`, 
 // all 151 pokemon are inserted into the database
 var insertAllPokemon = function() {
+	
+	
 };
 
 // NOTE: DO NOT invoke this function as part of your
