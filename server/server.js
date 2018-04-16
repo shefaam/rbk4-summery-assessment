@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var db = require('./db');
+var pokemonRouter = require('./server/resources/pokemon/pokemonRouter');
 
 // Create the Express application:
 var app = express();
@@ -15,10 +16,12 @@ var app = express();
 
 app.get('/', function (req, res) {
  res.send('hello world')
+
 });
 
 app.get('/api/pokemon', function (req, res) {
  //Respond with JSON of all Pokémon
+
 });
 
 

@@ -11,7 +11,8 @@ var pokemonSchema = mongoose.Schema({
 
 // Register the pokemonSchema with Mongoose as the 'Pokemon' collection.
 
-var Pokemon = mongoose.model('Pokemon',schema);
+var Pokemon = mongoose.model('Pokemon',pokemon);
+
 
 //create save function to save the model in dataBase
 var save = function(data,callback){
