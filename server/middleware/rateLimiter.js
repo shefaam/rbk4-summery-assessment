@@ -8,7 +8,7 @@ module.exports = rateLimiter;
 //////////////////
 What To do here ?
 //////////////////
-1- using params ? make a route('/:user')
+1- using params ? make a route('/:user') (router.param(name, callback))
 2- make post request use that format (/:user)
 3- how to make it not conflect with ('/:number') ?
 4- maybe as ('/number') does not have post request inside it , so i can use it without any conflect ( for post request only)
