@@ -14,5 +14,15 @@ var pokemonSchema =mongoose.Schema({
 
 var Pokemon=mongoose.model('Pokemon',pokemonSchema);
 
+var save=function(pokemonInstance){
 
+	pokemonInstance.save(function(err,pokemon){
+		if(err){
+			console.log(err)
+		}else{
+			console.log('saved pokemon!')
+		}
+	})
+}
 module.exports = Pokemon;
+module.exports.save = save;
