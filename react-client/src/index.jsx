@@ -10,8 +10,7 @@ class App extends React.Component {
 	constructor(props) {
     	super(props);
     	this.state = {
-    		pokemons: [],
-    		toDisplay:[]
+    		pokemons: []
     	}
     	this.pokemonsRetrive();
     	this.filterPokemon = this.filterPokemon.bind(this)
@@ -26,11 +25,9 @@ class App extends React.Component {
 		  method: 'GET'
 		})
 		.done (function (data) {
-			console.log(data);
 			that.setState({
 				pokemons : data
 			})
-			that.filterPokemon(null);
 		})
  	}
 
@@ -52,31 +49,20 @@ class App extends React.Component {
  	}
 
  	filterPokemon(type) {
- 		// need to replace all pokemons array with filtered one
- 		if (type === null|| type === undefined){
- 			this.setState({
- 			 	toDisplay: this.state.pokemons
- 			})
- 		} else {
- 			var filtered = [];
- 			var pokemons = this.state.pokemons.slice();
- 			pokemons.forEach(function (poke) {
- 				console.log(hi) 			
- 			})
- 			// for(var i = 0; i < pokemons.length ; i++){
- 			// 	// if ( pokemons[i].types.includes ) {
- 			// 	// 	filtered.push(pokemons[i])
- 			// 	// }
- 			// }
- 			console.log(filterd)
- 			//alert(type)
- 			this.setState({
- 			 	toDisplay: filtered
- 			})
+ 		let test = this.state.pokemons
+ 		let filtered = [];
+ 		for(var i = 0 ; i < test.length ; i++) {
+ 			if (test[i].types.includes(type)) {
+ 				filtered.push(test[i])
+ 			}
  		}
+ 		this.setState({
+		 	pokemons: filtered
+		})
  	}
 
  	render() {
+ 		
  		if (this.state.pokemons.length === 0) {
  			return(
  				<div>
@@ -88,9 +74,7 @@ class App extends React.Component {
  			<div>
  				<Search filterPokemon={this.filterPokemon} />
  				<NewPokemon addPokemon={this.addPokemon} />
-	 			<PokemonsDisplay pokemons = {this.state.toDisplay} />
-	 			<h1>test App</h1>
-	 			<button> Show </button>
+	 			<PokemonsDisplay pokemons = {this.state.pokemons} />
 	 		</div>
  		)
  	}
