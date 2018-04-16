@@ -16,13 +16,18 @@ app.use(express.static(path.join(__dirname, '../angular-client')));
 
 
 // Import the pokemonRouter and assign it to the correct route:
-route.get()
+// console.log(route.stack[0].route)
 
-// app.get('/name', function (req, res) {
-// pokedb.Pokemon.find(function (err , data) {
-// 	if(err){res.send(err)}
-// 		res.send(data)
-// })
-// });
+
+app.post('/name' ,function (req , res) {
+	console.log(req.body)
+})
+
+app.get('/name', function (req, res) {
+pokedb.Pokemon.find(function (err , data) {
+	if(err){res.send(err)}
+		res.send(data)
+})
+});
 	
 module.exports = app;

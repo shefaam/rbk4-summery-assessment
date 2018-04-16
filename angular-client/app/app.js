@@ -11,4 +11,18 @@ app.controller('myCtrl', function($scope, $http) {
     }, function myError(response) {
         $scope.pok = response.statusText;
     });
+  
+    $scope.Done = function (dat) {
+    	console.log($scope.name)
+    	   $http({
+        method : "POST",
+        url : "/name",
+        data : {name : $scope.dat},
+    }).then(function mySuccess(response) {
+        console.log(response.data);
+    	
+    }, function myError(response) {
+        $scope.pok = response.statusText;
+    });
+    }
 });
