@@ -20,7 +20,7 @@ exports.createOne = function (req, res) {
 };
 
 exports.retrieve = function (req, res) {
-//find() and retrieve all pokemons
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>find() and retrieve all pokemons
  app.find('/insertAllPokemon', function(data,err){
  	if( err ){
  		console.log ( 'RETRIEVE ERROR HAS BEEN DETECTED')
