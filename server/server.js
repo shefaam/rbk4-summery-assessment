@@ -2,10 +2,10 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var db = require('./db');
-
 // Create the Express application:
-var app;
-
+var app = express();
+var jsonParser = bodyParser.json() 
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 // Attach middleware:
 
