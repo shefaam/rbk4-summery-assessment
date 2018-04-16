@@ -10,10 +10,10 @@ exports.createOne = function (req, res) {
 };
 
 exports.retrieve = function (req, res) {
-	Pokemon.fetch(function(data){
-		res.json(data)
-	})
-
+	// Pokemon.fetch(function(data){
+	// 	res.json(data)
+	// })
+//res.send('hi')
 };
 
 exports.retrieveOne = function (req, res) {
@@ -43,3 +43,5 @@ exports.deleteOne = function (req, res) {
 
 
 };
+
+

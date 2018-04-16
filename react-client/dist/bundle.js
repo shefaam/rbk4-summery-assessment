@@ -88,10 +88,13 @@
 					number: 10,
 					name: '',
 					types: [],
-					image: ''
+					image: '',
+					num: 0
 				}
-	
 			};
+			_this.create = _this.create.bind(_this);
+			_this.onChange = _this.onChange.bind(_this);
+			_this.fetch = _this.fetch.bind(_this);
 			return _this;
 		}
 	
@@ -109,7 +112,20 @@
 			}
 		}, {
 			key: 'create',
-			value: function create() {}
+			value: function create() {
+				var x = this;
+				console.log(x.state.states.name);
+				_jquery2.default.ajax({
+					type: "POST",
+					url: '/',
+					//data:{name:data.name,types:data.types,image:data.image,number:data.num}
+					data: { name: 'alaa' },
+					success: function success() {
+						console.log('done');
+					}
+	
+				});
+			}
 		}, {
 			key: 'onChange',
 			value: function onChange(e) {
@@ -135,12 +151,12 @@
 					_react2.default.createElement('input', { name: 'image', value: this.state.states.image, onChange: this.onChange, placeholder: 'enter the imageURL' }),
 					_react2.default.createElement('br', null),
 					_react2.default.createElement('br', null),
-					_react2.default.createElement('input', { name: 'name', value: this.state.states.name, onChange: this.onChange, placeholder: 'enter the name' }),
+					_react2.default.createElement('input', { name: 'num', value: this.state.states.num, onChange: this.onChange, placeholder: 'enter the number' }),
 					_react2.default.createElement('br', null),
 					_react2.default.createElement('br', null),
 					_react2.default.createElement(
 						'button',
-						{ onClick: this.fetch },
+						{ onClick: this.create },
 						' CREATE '
 					),
 					_react2.default.createElement('br', null),
