@@ -9,7 +9,13 @@ app.post('/', function(req, res){
 	var data = req.body;
 	// app.get()
 	db.save(data, function(data,err){
-		
+		if ( err ){
+			res.send( err )
+			console.log( 'ERROR HAS BEEN DETECTED' )
+		} else {
+			re.send(data)
+			console.log( 'DATA PASSED!' )
+		}
 	})
 })
 
