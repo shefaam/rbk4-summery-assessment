@@ -4,7 +4,15 @@ var morgan = require('morgan');
 var db = require('./db');
 
 // Create the Express application:
-var app;
+var app=express();
+var router=express.Router()
+
+router.use('/pokemonRouter/:number', function (req, res){
+	console.log("any thing")
+})
+
+
+
 
 
 // Attach middleware:
@@ -13,7 +21,8 @@ var app;
 // Import the pokemonRouter and assign it to the correct route:
 
 
-app.get('/', function (req, res) {
+app.get('/pokemonRouter/:number', function (req, res) {
+	res.send('')
 	
 });
 
