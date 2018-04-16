@@ -1,0 +1,7 @@
+.border {
+	margin-top: 5px;
+	padding: 5px;
+	border: solid;
+	border-color: red;
+	border-width: 1px
+}

@@ -25,7 +25,6 @@ exports.createOne = function (req, res) {
 };
 
 exports.retrieve = function (req, res) {
-	// need to check for find method
 	Pokemon.find({}).exec(function(err, data) {
 		res.json(data);
 	});
@@ -33,7 +32,7 @@ exports.retrieve = function (req, res) {
 
 exports.retrieveOne = function (req, res) {
 	// retrieve one by its number
-	var number = req.body.number;
+	var number = req.params.number;
 	Pokemon.findOne({number:number}).exec(function (err, found) {
 		res.json(found);
 	})
@@ -41,7 +40,7 @@ exports.retrieveOne = function (req, res) {
 
 exports.updateOne = function (req, res) {
 	// update by number of pokemon and then send all the poke object again 
-	var number = req.body.number;
+	var number = req.params.number;
 	var name = req.body.name;
 	var type =req.body.type;
 	var imageUrl = req.body.imageUrl;
@@ -70,7 +69,7 @@ exports.delete = function (req, res) {
 
 exports.deleteOne = function (req, res) {
 	// delete by number
-	var number = req.body.number;
+	var number = req.params.number;
 	Pokemon.findOneAndRemove({number:number}, function(err, deleted) {
 		if (err) {
 			console.log(err);
