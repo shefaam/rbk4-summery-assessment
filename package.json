@@ -5,7 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "postinstall": "curl -s https://raw.githubusercontent.com/hackreactor-labs/pomander/master/bin/install | bash",
-    "start": "node server",
+    "start": "nodemon server",
     "test": "mocha test",
     "dev-react": "webpack -d --watch"
   },
