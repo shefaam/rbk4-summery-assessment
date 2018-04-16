@@ -67,7 +67,17 @@ oh my god same problem
 7- oh my god i ask for help destk and tell me the start point not from the table it is from the square check
 so the time now 1:38 PM 
 Now I will start the assesment :(
+I spend all the time to make the table for get and delete work
+Please take this in calculated things :(
 
+8- start the assessment now and first connect the data base
+
+9- now create pokemon model
+
+10- insertAllPokemon.js
+
+
+******Note: we have error for connect the file with html
 
 * [MDN](https://developer.mozilla.org/en-US/)
 * [Express docs](https://expressjs.com/)

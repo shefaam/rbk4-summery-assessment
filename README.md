@@ -76,7 +76,7 @@ Using the existing code provided in `server/`, follow the steps below to build o
 
 
 
-- [ ] Connect Mongoose to your local Mongo database in `db/index.js`
+- [x] Connect Mongoose to your local Mongo database in `db/index.js`
 - [ ] Create a Pokémon model in `resources/pokemon/Pokemon.js` and register it with Mongoose as the `Pokemon` collection with the following properties:
   - [ ] `number`, a unique number
   - [ ] `name`, a unique string
