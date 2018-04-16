@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var morgan = require('morgan');
 var db = require('./db');
+var db = require ('../db/index.js');
 
 import pokemonRouter from ('./pokemonRouter.js')
 

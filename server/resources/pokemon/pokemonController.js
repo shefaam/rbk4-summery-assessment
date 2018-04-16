@@ -5,23 +5,23 @@ var data = body.json()
 // Complete each of the following controller methods
 exports.createOne = function (req, res) {
 //create one table
-	app.get('/insertAllPokemon.js', function(data, err){
-		if ( err ){
-			req.send(err)
-			console.log ( 'CREATE ONE ERROR HAS BEEN DETECTED' )
-		} else {
-			res.send(data)
-			console.log ( 'CREATE ONE RESPONSE SUCCESSFUL' )
+app.get('/insertAllPokemon.js', function(data, err){
+	if ( err ){
+		req.send(err)
+		console.log ( 'CREATE ONE ERROR HAS BEEN DETECTED' )
+	} else {
+		res.send(data)
+		console.log ( 'CREATE ONE RESPONSE SUCCESSFUL' )
 
-		};
+	};
 
-	});
+});
 
 };
 
 exports.retrieve = function (req, res) {
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>find() and retrieve all pokemons
- app.find('/insertAllPokemon', function(data,err){
+ app.find('/', function(data,err){ //('/insertAllPokemon')
  	if( err ){
  		console.log ( 'RETRIEVE ERROR HAS BEEN DETECTED')
  	} else {
@@ -34,7 +34,7 @@ exports.retrieve = function (req, res) {
 
 exports.retrieveOne = function (req, res) {
 //findOne() and retrieve one pokemons
- app.findOne('/insertAllPokemon', function(data,err){
+ app.findOne('/', function(data,err){ //('/insertAllPokemon')
  	if( err ){
  		console.log ( 'RETRIEVE_ONE ERROR HAS BEEN DETECTED')
  	} else {
@@ -45,6 +45,7 @@ exports.retrieveOne = function (req, res) {
 
 exports.updateOne = function (req, res) {
 //update one pokemon 
+app.
 };
 
 exports.delete = function (req, res) {
