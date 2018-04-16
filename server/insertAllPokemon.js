@@ -7,7 +7,6 @@ var Pokemon = require('Pokemon')
 
 // i need to read the pokemon.json file and save the data inside of it 
 // in the database 
-
 var insertAllPokemon = function() {
 fs.readFile('/data', 'utf8', (err, data) => {
   if (err) throw err;

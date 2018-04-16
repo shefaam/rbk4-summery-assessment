@@ -12,12 +12,11 @@ app.use(bodyParser.json())
 
 // Attach middleware:
 
-
 // Import the pokemonRouter and assign it to the correct route:
 
 
 app.get('/', function (req, res) {
-	res.send(req.body)
+	res.send("hello")
 });
 
 module.exports = app;
