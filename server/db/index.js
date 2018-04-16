@@ -8,5 +8,6 @@ mongoose.connect(mongoUri);
 
 var db;
 
+db.on('error',console.error.bind(console,'ERROOOOR'));
 
 module.exports = db;
