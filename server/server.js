@@ -27,6 +27,7 @@ app.post('api/pokemon',function(req,res){
 	var types=req.body.types;
 	var imageUrl=req.body.imageUrl;
       data.push({"number":number,"name":name,"types":types,"imageUrl":imageUrl})
+      res.send(data)
 })
 
 module.exports = app;

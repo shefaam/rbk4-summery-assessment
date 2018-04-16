@@ -8,9 +8,9 @@ import data from '../data/pokemon.json'
 // const App = (props) => <Starter num={ props.number } />;
 class App extends React.Component{
 	constructor(props){
-		super(props);
+		super(props)
 		this.state={
-			pokemons:[];
+			pokemons:[],
 			pokemon:''
 		}
 		this.fetch=this.fetch.bind(this)
@@ -25,6 +25,23 @@ class App extends React.Component{
 			data:data,
 			success:function (data) {
 				console.log(data)
+			}
+			 error: function (xhr, ajaxOptions, thrownError) {
+				    alert(xhr.status);
+				    alert(thrownError);
+  }
+
+		})
+	}
+	fix(poke){
+		$.ajax({
+			type:'POST'
+			url:'/',
+			data:this.setState({
+				this.state.pokemons.push(poke)
+			}),
+			success:function (data) {
+				data.save();
 			}
 			 error: function (xhr, ajaxOptions, thrownError) {
 				    alert(xhr.status);
