@@ -6,5 +6,5 @@ import $ from 'jquery';
 
 const App = (props) => <Starter num={ props.number } />;
 
-ReactDOM.render(<App number={ 10 }/>, document.getElementById('app'));
+ReactDOM.render(<App number={ this.props.number }/>, document.getElementById('app'));
 

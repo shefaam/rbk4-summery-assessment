@@ -1,8 +1,25 @@
 var mongoose = require('mongoose');
-var mongoUri = 'mongodb://localhost/pokemon';
+//this is api for pokemon
+var mongoUri = 'http://pokeapi.co/api/v2/';
 
 // Connect Mongoose to our local MongoDB via URI specified above and export it below
-var db;
+mongoose.connect('http://pokeapi.co/api/v2/')
+
+var db=mongoose.cdb.on("error", console.error.bind(console, "connection error"));
+ db.once("open", function(req,res) {
+   console.log("Connection succeeded.");
+ });
+
+var pokemonSchema;
+var pokemonSchema=new Schema({
+	 "number":{type:Number},
+       "name": {type:String},
+	  "types": {type:Object}
+	     
+});
 
 
 module.exports = db;
+
+
+
