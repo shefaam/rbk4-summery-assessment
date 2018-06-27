@@ -5,21 +5,8 @@ You are going to build a Pokémon API with Node, Express, and MongoDB. Your API 
 
 # RECORDING
 
-## How to Record Your Screen
-This document details how to create a recording of your screen.
-* [Mac](#mac)
-* [PC](#pc)
 * [Linux](#linux)
-*NOTE: Recording several hours of screen capture will use a large amount of data, up 4GB PER HOUR. Please make sure you have enough free storage space to accommodate your screen capture data!*
-## Mac
-### To begin recording
-*  Launch QuickTime Player from Finder or Alfred/Spotlight.
-* In QuickTime Player, go to the `File -> New screen recording`
-* Click the down arrow next to the record button and enable `Show Mouse Clicks in Recording`
-![screen shot 2016-05-25 at 4 15 41 pm](https://cloud.githubusercontent.com/assets/6980359/15559089/16ed9072-2294-11e6-8348-0c8ad7a1d963.png)
-* Click the red record button to initiate the screen recording
-* QuickTime will show you a notice in the middle of the screen as show in the screen shot below -- click on it confirm the screen capture and begin recording
-![screen shot 2016-05-25 at 4 15 48 pm](https://cloud.githubusercontent.com/assets/6980359/15559088/16ecd8e4-2294-11e6-8d3d-a3ed5302e856.png)
+*NOTE: Recording several hours of screen capture will use a large amount of data, up 4GB PER HOUR. Please make sure 2e856.png)
 To check that QuickTime is actively recording, look for the black stop button (square) inside a circle, in the system tray:
 ![screen shot 2016-05-25 at 4 16 03 pm](https://cloud.githubusercontent.com/assets/6980359/15559090/16ee19b6-2294-11e6-8c9b-260c4e7afa23.png)
 ### To stop recording
